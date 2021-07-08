@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: bboxconvert
-Version: 0.2.0
+Version: 0.2.1
 Summary: Convert between bounding box annotation formats
 Home-page: https://github.com/tensorturtle/bboxconvert
 Author: Jason Sohn
