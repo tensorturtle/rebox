@@ -1,8 +1,3 @@
-"""
-Copyright (C) 2021 Jason Sohn
-
-MIT License
-"""
 from .elements import *
 
 def yolo_to_coco(c,w,h):

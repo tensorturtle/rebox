@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: bboxconvert
-Version: 0.2.1
+Version: 0.0.1
 Summary: Convert between bounding box annotation formats
 Home-page: https://github.com/tensorturtle/bboxconvert
 Author: Jason Sohn
@@ -16,9 +16,18 @@ License-File: LICENSE
 # bboxconvert <br /> ⛶🠺🞖
 Minimal library to convert between unrotated rectangular bounding box annotation formats.
 
-Supports python list, numpy array, and pytorch tensor.
+## Installation
 
-## Common Bounding Box Format Specifications
+Install with pip:
+```
+pip install bboxconvert==0.1.0
+```
+
+## Usage
+
+Refer to the following tables to determine which function you need:
+
+### Common Bounding Box Formats
 
 |                	|               Range              	|           Coordinates Format          	|
 |--------------:	|:--------------------------------:	|:-------------------------------------:	|
@@ -27,7 +36,7 @@ Supports python list, numpy array, and pytorch tensor.
 |   **PASCAL_VOC**   	| Pixels [0, width] or [0, height] 	|     [ x_min, y_min, x_MAX, y_MAX ]    	|
 | **Albumentations** 	|         Normalized [0,1]         	|     [ x_min, y_min, x_MAX, y_MAX ]    	|
 
-## Shortcut Conversions Between Popular Dataset Formats
+### Shortcut Conversions Between Popular Dataset Formats
 
 | from (column) to (row) 	| YOLO           	| COCO           	| PASCAL_VOC    	| Albumentations 	|
 |------------------------:|:---------------:|:---------------:|:--------------: |:---------------:|
@@ -35,6 +44,16 @@ Supports python list, numpy array, and pytorch tensor.
 | **COCO**                   	| coco_to_yolo() 	| 🌸              	| coco_to_voc() 	| coco_to_A()      	|
 | **PASCAL_VOC**            	| voc_to_yolo()  	| voc_to_coco()  	| 🌸             	| voc_to_A()     	|
 | **Albumentations**         	| A_to_yolo()    	| A_to_coco()    	| A_to_voc()    	| 🌸              	|
+
+### Example
+
+```python3
+from bboxconvert import bboxconvert
+
+voc_box = [310,200,350,290] # PASCAL_VOC format
+coco_box = bboxconvert.voc_to_coco(voc_box) 
+```
+
 
 ## Implementation Summary
 
