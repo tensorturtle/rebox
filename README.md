@@ -50,8 +50,10 @@ The basic transformations are available in `bboxconvert.elements`
 from bboxconvert.elements import xyXY_to_xywh, normalize
 
 xyxy_box = [310, 200, 350, 290] # xyxy format
+width = 1280 # pixels
+height = 720 # pixels
 xywh_box = xyXY_to_xywh(xyxy_box)
-norm_xywh_box = normalize(xywh_box)
+norm_xywh_box = normalize(xywh_box, width, height)
 ```
 
 
