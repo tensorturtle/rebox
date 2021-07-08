@@ -3,7 +3,7 @@ Minimal library to convert between bounding box annotation formats.
 
 ## Popular Dataset Formats
 
-| from (down this column)  to (across this row) 	| YOLO           	| COCO           	| PASCAL_VOC    	| Albumentations 	|
+| from (down this column) \n to (across this row) 	| YOLO           	| COCO           	| PASCAL_VOC    	| Albumentations 	|
 |------------------------------------------------:|:---------------:|:---------------:|:--------------: |:---------------:|
 | YOLO                                          	| X              	| yolo_to_coco() 	| yolo_to_voc() 	| yolo_to_A      	|
 | COCO                                          	| coco_to_yolo() 	| X              	| coco_to_voc() 	| coco_to_A      	|
