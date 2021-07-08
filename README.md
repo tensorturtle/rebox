@@ -1,4 +1,4 @@
-# 🞖 ⊞ bboxconvert
+# 🞖 ⛶ bboxconvert
 Minimal library to convert between unrotated rectangular bounding box annotation formats.
 
 Supports python list, numpy array, and pytorch tensor.
