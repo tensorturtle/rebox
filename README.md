@@ -43,7 +43,7 @@ coco_box = voc_to_coco(voc_box)
 
 ## Implementation Summary
 
-Under the hood, the shortcuts correspond to compositions of a small number of transformations.
+Under the hood, the shortcuts are compositions of smaller functions.
 where 
 + `c` = coordinates [a,b,c,d] where a,c are horizontal-related, and b,d are vertical-related
 + `w` = width in pixels
