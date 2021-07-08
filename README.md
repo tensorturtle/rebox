@@ -62,7 +62,7 @@ norm_xywh_box = normalize(xywh_box, width, height)
 ```
 
 
-## Implementation Summary
+## Shortcut Full Reference
 
 Under the hood, the shortcuts are compositions of simpler functions.
 where 
@@ -76,3 +76,8 @@ where
 |               **COCO** 	| `normalize(xyXY_to_xCyCwh(xywh_to_xyXY(c)),w,h)` 	| 🌸                                                 	| `xywh_to_xyXY(c)`                    	| `normalize(xywh_to_xyXY(c),w,h)` 	|
 |         **PASCAL_VOC** 	| `normalize(xyXY_to_xCyCwh(c),w,h)`               	| `xyXY_to_xywh(c)`                                 	| 🌸                                    	| `normalize(c,w,h)`               	|
 |     **Albumentations** 	| `xyXY_to_xCyCwh(c)`                              	| `denormalize(xyXY_to_xywh(c),w,h)`                	| `denormalize(c,w,h)`                 	| 🌸                                	|
+
+## Look foward to...
+
+- [ ] Numpy and PyTorch tensor support with vectorized operations
+- [ ] Auto batch detection & processing
