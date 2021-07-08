@@ -1,7 +1,13 @@
 # bboxconvert <br /> ⛶🠺🞖
 Minimal library to convert between unrotated rectangular bounding box annotation formats.
 
-Supports python list, numpy array, and pytorch tensor.
+## Installation
+
+Install with pip:
+```
+pip install bboxconvert==0.1.0
+```
+
 
 ## Common Bounding Box Format Specifications
 
