@@ -8,17 +8,11 @@ Install with pip:
 pip install bboxconvert==0.1.0
 ```
 
-## Usage Example
+## Usage
 
-```python3
-from bboxconvert import bboxconvert
+Refer to the following tables to determine which function you need:
 
-voc_box = [310,200,350,290] # PASCAL_VOC format
-coco_box = bboxconvert.voc_to_coco(voc_box) 
-```
-
-
-## Common Bounding Box Format Specifications
+### Common Bounding Box Formats
 
 |                	|               Range              	|           Coordinates Format          	|
 |--------------:	|:--------------------------------:	|:-------------------------------------:	|
@@ -27,7 +21,7 @@ coco_box = bboxconvert.voc_to_coco(voc_box)
 |   **PASCAL_VOC**   	| Pixels [0, width] or [0, height] 	|     [ x_min, y_min, x_MAX, y_MAX ]    	|
 | **Albumentations** 	|         Normalized [0,1]         	|     [ x_min, y_min, x_MAX, y_MAX ]    	|
 
-## Shortcut Conversions Between Popular Dataset Formats
+### Shortcut Conversions Between Popular Dataset Formats
 
 | from (column) to (row) 	| YOLO           	| COCO           	| PASCAL_VOC    	| Albumentations 	|
 |------------------------:|:---------------:|:---------------:|:--------------: |:---------------:|
@@ -35,6 +29,16 @@ coco_box = bboxconvert.voc_to_coco(voc_box)
 | **COCO**                   	| coco_to_yolo() 	| 🌸              	| coco_to_voc() 	| coco_to_A()      	|
 | **PASCAL_VOC**            	| voc_to_yolo()  	| voc_to_coco()  	| 🌸             	| voc_to_A()     	|
 | **Albumentations**         	| A_to_yolo()    	| A_to_coco()    	| A_to_voc()    	| 🌸              	|
+
+### Example
+
+```python3
+from bboxconvert import bboxconvert
+
+voc_box = [310,200,350,290] # PASCAL_VOC format
+coco_box = bboxconvert.voc_to_coco(voc_box) 
+```
+
 
 ## Implementation Summary
 
