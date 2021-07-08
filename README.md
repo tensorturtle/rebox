@@ -14,7 +14,7 @@ pip install bboxconvert==0.1.0
 from bboxconvert import bboxconvert
 
 voc_box = [310,200,350,290] # PASCAL_VOC format
-coco_box = voc_to_coco(voc_box) 
+coco_box = bboxconvert.voc_to_coco(voc_box) 
 ```
 
 
