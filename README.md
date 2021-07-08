@@ -1,7 +1,11 @@
 # bboxconvert
-Minimal library to convert between bounding box annotation formats.
+Minimal library to convert between unrotated rectangular bounding box annotation formats.
 
-## Popular Dataset Formats
+## Common Bounding Box Format Specifications
+
+
+
+## Shortcut Conversions Between Popular Dataset Formats
 
 | from (column) to (row) 	| YOLO           	| COCO           	| PASCAL_VOC    	| Albumentations 	|
 |------------------------:|:---------------:|:---------------:|:--------------: |:---------------:|
