@@ -23,6 +23,11 @@ Supports python list, numpy array, and pytorch tensor.
 
 ## Implementation
 
+where 
++ `c` = coordinates [a,b,c,d] where a,c are horizontal-related, and b,d are vertical-related
++ `w` = width in pixels
++ `h` = height in pixels
+
 | from (column) to (row) 	|                       YOLO                       	|                        COCO                       	|              PASCAL_VOC              	|          Albumentations          	|
 |:----------------------:	|:------------------------------------------------:	|:-------------------------------------------------:	|:------------------------------------:	|:--------------------------------:	|
 |               **YOLO** 	| 🌸                                                	| `denormalize(xyXY_to_xywh(xCyCwh_to_xyXY(c),w,h)` 	| `denormalize(xCyCwh_to_xyXY(c),w,h)` 	| `xCyCwh_to_xyXY(c)`              	|
