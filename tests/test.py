@@ -1,13 +1,7 @@
 import unittest
 
-from bboxconvert import test_sum
-from bboxconvert.bboxconvert import coco_to_voc
-
-class TestSum(unittest.TestCase):
-    def test_list_int(self):
-        data = [1,2,3]
-        result = test_sum(data)
-        self.assertEqual(result, 6)
+from bboxconvert.bboxconvert import * 
+from bboxconvert.elements import *
 
 class BboxTest(unittest.TestCase):
     def test_coordinate_conversions(self):
