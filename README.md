@@ -6,7 +6,7 @@ Supports python list, numpy array, and pytorch tensor.
 ## Common Bounding Box Format Specifications
 
 |                	|               Range              	|           Coordinates Format          	|
-|:--------------:	|:--------------------------------:	|:-------------------------------------:	|
+|--------------:	|:--------------------------------:	|:-------------------------------------:	|
 |      **YOLO**      	|         Normalized [0,1]         	| [ x_Center, y_Center, width, height ] 	|
 |      **COCO**      	| Pixels [0, width] or [0, height] 	|    [ x_min, y_min, width, height ]    	|
 |   **PASCAL_VOC**   	| Pixels [0, width] or [0, height] 	|     [ x_min, y_min, x_MAX, y_MAX ]    	|
