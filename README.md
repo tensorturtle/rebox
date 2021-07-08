@@ -8,6 +8,15 @@ Install with pip:
 pip install bboxconvert==0.1.0
 ```
 
+## Usage Example
+
+```python3
+from bboxconvert import bboxconvert
+
+voc_box = [310,200,350,290] # PASCAL_VOC format
+coco_box = voc_to_coco(voc_box) 
+```
+
 
 ## Common Bounding Box Format Specifications
 
