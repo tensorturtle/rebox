@@ -15,9 +15,9 @@ pip install bboxconvert==0.1.0
 
 ## Usage
 
-There are two ways to use this library:
+There are two ways to use this package:
 1. Refer to [popular format shortcuts](#shortcut-functions-for-popular-formats) to find relevant function.
-2. Directly use the [basic transformations](bboxconvert/elements.py). See example below.
+2. Directly use the [basic transformations](bboxconvert/elements.py). See example [below](#directly-using-the-normalization-function).
 
 ### Common Bounding Box Formats
 
