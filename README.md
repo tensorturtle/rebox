@@ -1,4 +1,7 @@
 # bboxconvert <br /> ⛶🠺🞖
+
+[![CircleCI](https://circleci.com/gh/tensorturtle/bboxconvert.svg?style=shield)](https://app.circleci.com/pipelines/github/tensorturtle/bboxconvert)
+
 Minimal library to convert between unrotated rectangular bounding box annotation formats.
 
 A lot of object detection codebases have their own bounding box manipulation utility functions. Don't Repeat Yourself and use this instead.
@@ -12,9 +15,9 @@ pip install bboxconvert==0.1.0
 
 ## Usage
 
-There are two ways to use this library:
+There are two ways to use this package:
 1. Refer to [popular format shortcuts](#shortcut-functions-for-popular-formats) to find relevant function.
-2. Directly use the [basic transformations](bboxconvert/elements.py). See example below.
+2. Directly use the [basic transformations](bboxconvert/elements.py). See example [below](#directly-using-the-normalization-function).
 
 ### Common Bounding Box Formats
 
@@ -59,7 +62,7 @@ norm_xywh_box = normalize(xywh_box, width, height)
 ```
 
 
-## Implementation Summary
+## Shortcut Full Reference
 
 Under the hood, the shortcuts are compositions of simpler functions.
 where 
@@ -73,3 +76,8 @@ where
 |               **COCO** 	| `normalize(xyXY_to_xCyCwh(xywh_to_xyXY(c)),w,h)` 	| 🌸                                                 	| `xywh_to_xyXY(c)`                    	| `normalize(xywh_to_xyXY(c),w,h)` 	|
 |         **PASCAL_VOC** 	| `normalize(xyXY_to_xCyCwh(c),w,h)`               	| `xyXY_to_xywh(c)`                                 	| 🌸                                    	| `normalize(c,w,h)`               	|
 |     **Albumentations** 	| `xyXY_to_xCyCwh(c)`                              	| `denormalize(xyXY_to_xywh(c),w,h)`                	| `denormalize(c,w,h)`                 	| 🌸                                	|
+
+## Look foward to...
+
+- [ ] Numpy and PyTorch tensor support with vectorized operations
+- [ ] Auto batch detection & processing
