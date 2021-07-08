@@ -3,7 +3,7 @@ Copyright (C) 2021 Jason Sohn
 
 MIT License
 """
-from basic_bbox import *
+from .elements import *
 
 def yolo_to_coco(c,w,h):
     return denormalize(xyXY_to_xywh(xCyCwh_to_xyXY(c)),w,h)
@@ -42,4 +42,5 @@ def A_to_voc(c,w,h):
     return denormalize(c,w,h)
 
 
-
+if __name__=='__main__':
+    pass
