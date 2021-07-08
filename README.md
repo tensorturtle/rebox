@@ -21,8 +21,9 @@ Supports python list, numpy array, and pytorch tensor.
 | **PASCAL_VOC**            	| voc_to_yolo()  	| voc_to_coco()  	| 🌸             	| voc_to_A()     	|
 | **Albumentations**         	| A_to_yolo()    	| A_to_coco()    	| A_to_voc()    	| 🌸              	|
 
-## Implementation
+## Implementation Summary
 
+Under the hood, the shortcuts correspond to compositions of a small number of transformations.
 where 
 + `c` = coordinates [a,b,c,d] where a,c are horizontal-related, and b,d are vertical-related
 + `w` = width in pixels
