@@ -1,6 +1,6 @@
 # bboxconvert <br /> ⛶🠺🞖
 
-[![CircleCI](https://circleci.com/gh/tensorturtle/bboxconvert.svg?style=shield)](https://github.com/tensorturtle/bboxconvert)
+[![CircleCI](https://circleci.com/gh/tensorturtle/bboxconvert.svg?style=shield)](https://app.circleci.com/pipelines/github/tensorturtle/bboxconvert)
 
 Minimal library to convert between unrotated rectangular bounding box annotation formats.
 
