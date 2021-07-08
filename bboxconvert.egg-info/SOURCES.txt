@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+bboxconvert/__init__.py
+bboxconvert/bboxconvert.py
+bboxconvert/elements.py
+bboxconvert/feed.py
+bboxconvert.egg-info/PKG-INFO
+bboxconvert.egg-info/SOURCES.txt
+bboxconvert.egg-info/dependency_links.txt
+bboxconvert.egg-info/entry_points.txt
+bboxconvert.egg-info/top_level.txt
