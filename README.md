@@ -12,7 +12,7 @@ pip install bboxconvert==0.1.0
 
 There are two ways to use this library:
 1. Refer to [popular format shortcuts](#shortcut-functions-for-popular-formats) to find relevant function.
-2. Directly use the [basic transformations](bboxconver/elements.py).
+2. Directly use the [basic transformations](bboxconvert/elements.py).
 
 ### Common Bounding Box Formats
 
