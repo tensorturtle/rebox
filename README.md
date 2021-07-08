@@ -1,6 +1,8 @@
 # bboxconvert <br /> ⛶🠺🞖
 Minimal library to convert between unrotated rectangular bounding box annotation formats.
 
+Every object detection codebase I have seen has its own bounding box utils. Don't Repeat Yourself and use this instead.
+
 ## Installation
 
 Install with pip:
