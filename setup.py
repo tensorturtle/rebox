@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="bboxconvert",
-    version="0.0.1",
+    version="1.0.0",
     description="Convert between bounding box annotation formats",
     long_description=README,
     long_description_content_type="text/markdown",
