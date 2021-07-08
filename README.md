@@ -36,7 +36,7 @@ Refer to the following tables to determine which function you need:
 from bboxconvert.bboxconvert import *
 
 voc_box = [310,200,350,290] # PASCAL_VOC format
-coco_box = bboxconvert.voc_to_coco(voc_box) 
+coco_box = voc_to_coco(voc_box) 
 ```
 
 
