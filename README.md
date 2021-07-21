@@ -27,7 +27,7 @@ There are two ways to use this package:
 |      **COCO**      	| Pixels [0, width] or [0, height] 	|    `[ x_min, y_min, width, height ]`    	|
 |   **PASCAL_VOC**   	| Pixels [0, width] or [0, height] 	|     `[ x_min, y_min, x_MAX, y_MAX ]`    	|
 | **Albumentations** 	|         Normalized [0,1]         	|     `[x_min, y_min, x_MAX, y_MAX ]`    	|
-| **Label Studio**    | Normalized percentage [0, 100]    |     `[x_min, y_min, width, height]'     |
+| **Label Studio**    | Normalized percentage [0, 100]    |     `[x_min, y_min, width, height]`     |
 
 ### Shortcut Functions for Popular Formats
 
