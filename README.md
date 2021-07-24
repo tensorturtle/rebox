@@ -13,6 +13,14 @@ Install with pip:
 pip install bboxconvert==0.1.0
 ```
 
+## Usage Example
+
+```python3
+from bboxconvert import BBoxConverter
+
+yolo_to_coco = BBoxConverter(from='yolo', to='coco')
+new_bbox = yolo_to_coco(old_bbox)
+
 ## Usage
 
 There are two ways to use this package:
