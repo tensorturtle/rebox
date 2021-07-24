@@ -1,4 +1,4 @@
-# bboxconvert <br /> ⛶🠺🞖
+# bboxconvert
 
 [![CircleCI](https://circleci.com/gh/tensorturtle/bboxconvert.svg?style=shield)](https://app.circleci.com/pipelines/github/tensorturtle/bboxconvert)
 
