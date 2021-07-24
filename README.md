@@ -20,6 +20,7 @@ from bboxconvert import BBoxConverter
 
 yolo_to_coco = BBoxConverter(from='yolo', to='coco')
 new_bbox = yolo_to_coco(old_bbox)
+```
 
 ## Usage
 
