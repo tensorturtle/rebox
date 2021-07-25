@@ -1,8 +1,4 @@
-"""2D bounding box format converter module
-
-Use example:
-converter = BBoxConverter(from='coco', to='yolo')
-yolo_bbox = converter(coco_bbox)
+"""2D bounding box format converter
 """
 
 import numpy as np
@@ -69,7 +65,7 @@ def _style_export(bbox: BBox2D, target_format: BBoxFormat) -> BBox2D: # keeps sc
     return BBox2D(output, output_format)
 
 
-def convert(source_bbox: BBox2D, target_format: BBoxFormat, image_width=None, image_height=None) -> BBox2D:
+def bboxconvert(source_bbox: BBox2D, target_format: BBoxFormat, image_width=None, image_height=None) -> BBox2D:
 
     # strategy for managing combinatorial growth in conversions
     # use interim XYXY style
@@ -85,7 +81,7 @@ def convert(source_bbox: BBox2D, target_format: BBoxFormat, image_width=None, im
             interim_bbox = BBox2D(xyxy_scaled_rel_to_abs(interim_bbox.value, interim_bbox.format.scale, image_width, image_height), source_bbox.format)
         else:
             # converting from absolute to relative
-            interim_bbox = BBox2D(xyxy_abs_to_scaled_rel(interim_bbox.value, interim_bbox.format.scale, image_width, image_height), source_bbox.format)
+            interim_bbox = BBox2D(xyxy_abs_to_scaled_rel(interim_bbox.value, target_format.scale, image_width, image_height), source_bbox.format)
 
 
     # 3. Convert style from interim format to desired format
@@ -97,7 +93,7 @@ if __name__ == "__main__":
     example1 = BBox2D([120,115,40,50], coco_format)
     print(example1)
 
-    converted_example1 = convert(example1, label_studio_format, 10,10)
+    converted_example1 = bboxconvert(example1, label_studio_format, 100,200)
 
     print(converted_example1.value)
     print(converted_example1.format.style)

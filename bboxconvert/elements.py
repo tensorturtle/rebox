@@ -141,4 +141,19 @@ def xyxy_scaled_rel_to_abs(coords, scale, width, height):
     return [abs_x_min, abs_y_min, abs_x_max, abs_y_max]
 
 def xyxy_abs_to_scaled_rel(coords, scale, width, height):
-    return [coords[0]/width, coords[1]/height, coords[2]/width, coords[3]/height]
+    abs_x_min = coords[0]
+    abs_y_min = coords[1]
+    abs_x_max = coords[2]
+    abs_y_max = coords[3]
+
+    rel_x_min = abs_x_min / width
+    rel_y_min = abs_y_min / height
+    rel_x_max = abs_x_max / width
+    rel_y_max = abs_y_max / height
+
+    x_min = rel_x_min * scale
+    y_min = rel_y_min * scale
+    x_max = rel_x_max * scale
+    y_max = rel_y_max * scale
+
+    return [x_min, y_min, x_max, y_max]
