@@ -43,8 +43,3 @@ Common formats such as YOLO, COCO, PASCAL_VOC, Albumentations, and Label Studio 
 | **Albumentations** 	|         Normalized [0,1]         	|     `[x_min, y_min, x_MAX, y_MAX ]`    	|
 | **Label Studio**    | Normalized percentage [0, 100]    |     `[x_min, y_min, width, height]`     |
 
-
-## Look foward to...
-
-- [ ] Numpy and PyTorch tensor support with vectorized operations
-- [ ] Auto batch detection & processing
