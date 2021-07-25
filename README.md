@@ -43,3 +43,4 @@ Common formats such as YOLO, COCO, PASCAL_VOC, Albumentations, and Label Studio 
 | **Albumentations** 	|         Normalized [0,1]         	|     `[x_min, y_min, x_MAX, y_MAX ]`    	|
 | **Label Studio**    | Normalized percentage [0, 100]    |     `[x_min, y_min, width, height]`     |
 
+If you there is a bounding box format that isn't included here, just make a GitHub issue!
