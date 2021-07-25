@@ -4,7 +4,7 @@
 
 Minimal library to convert between unrotated rectangular bounding box annotation formats.
 
-WARNING: IN DEVELOPMENT and not ready to use
+# !!! WARNING: IN DEVELOPMENT and not ready to use
 
 A lot of object detection codebases have their own bounding box manipulation utility functions. Don't Repeat Yourself and use this instead.
 
