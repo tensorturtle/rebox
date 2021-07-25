@@ -36,7 +36,7 @@ but if you wish, you can make your own coordinates format by instantiating the B
 
 ### Common Bounding Box Formats
 
-|                	|               Range              	|           Coordinates Format          	|
+|                	|               Scale              	|           Style          	|
 |--------------:	|:--------------------------------:	|:-------------------------------------:	|
 |      **YOLO**      	|         Normalized [0,1]         	| `[ x_Center, y_Center, width, height ]` 	|
 |      **COCO**      	| Pixels [0, width] or [0, height] 	|    `[ x_min, y_min, width, height ]`    	|
