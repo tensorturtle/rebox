@@ -30,8 +30,7 @@ yolo_bbox = BBox2D([0.31, 0.5, 0.2, 0.6], yolo_format) # using built-in 'yolo_fo
 coco_bbox = bboxconvert(yolo_bbox, coco_format) # using built-in 'coco_format'
 ```
 
-Common formats such as YOLO, COCO, PASCAL_VOC, Albumentations, and Label Studio are provided already,
-but if you wish, you can make your own coordinates format by instantiating the BBoxFormat class.
+Common formats such as YOLO, COCO, PASCAL_VOC, Albumentations, and Label Studio are provided already. If you wish to make your own coordinates format, instantiate the BBoxFormat class.
 
 
 ### Common Bounding Box Formats
