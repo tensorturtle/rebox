@@ -2,9 +2,9 @@
 """
 
 import numpy as np
-from elements import *
-from bbox import *
-from format import BBoxFormat
+from .elements import *
+from .bbox import *
+from .format import BBoxFormat
 
 def _validate_image_size(image_width, image_height):
     if image_width is None or image_height is None:

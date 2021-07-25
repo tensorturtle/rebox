@@ -3,7 +3,7 @@
 from copy import deepcopy
 import numpy as np
 
-from format import BBoxFormat
+from .format import BBoxFormat
 
 # common research bounding box annotation formats
 yolo_format = BBoxFormat(style='XcYcWH', scale=1)
@@ -18,7 +18,7 @@ class BBox2D:
 
     Args:
         box: Sequence of length 4 representing bounding box coordinates.
-        mode: User-defined bbox format and scaling. This is only loosely coupled with 'box'. This class will not enforce or check that the 'box' is in the correct 'mode' format. Create your own BBoxFormat or choose among built-in popular formats: 'yolo','coco','pascal_voc','albumentations','label_studio'.
+        mode: User-defined bbox format and scaling. This is only loosely coupled with 'box'. This class does not enforce or check that the 'box' is in the correct 'mode' format. Create your own BBoxFormat or choose among built-in popular formats: 'yolo','coco','pascal_voc','albumentations','label_studio'.
         manual_scaling: if mode not entered, choose relative scaling factor (0 for absolute pixel values, 1 for normalizing between 0 and 1, 100 for percentage)
 
     Raises:
@@ -51,7 +51,7 @@ class BBox2D:
         self._value = x # length
 
 
-    def __eq__(self,x):
+    def __eq__(self, other):
         raise NotImplementedError
     def __and__(self, other):
         #return bbox that is self AND other
