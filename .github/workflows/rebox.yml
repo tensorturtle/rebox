@@ -48,7 +48,7 @@ jobs:
         # Comma-separated list of files to upload
         files: #optional
         # Directory to search for coverage reports.
-        directory: rebox
+        directory:
         # Flag upload to group coverage metrics (e.g. unittests | integration | ui,chrome)
         flags: # optional
         # The commit SHA of the parent for which you are uploading coverage. If not present, the parent will be determined using the API of your repository provider.  When using the repository providers API, the parent is determined via finding the closest ancestor to the commit.
