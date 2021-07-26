@@ -37,7 +37,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest tests/test.py
+        pytest rebox/test-with-pytest.py
     - name: Codecov
       # You may pin to the exact commit or the version.
       # uses: codecov/codecov-action@51d810878be5422784e86451c0e7c14e5860ec47
