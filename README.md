@@ -9,7 +9,7 @@ Instead of writing yet more utility functions to convert between bounding box fo
 
 > **Like [varunagrawal/bbox](https://github.com/varunagrawal/bbox), but**
 > + ❌ only support 2D bounding boxes
-> + ✅ add many more built-in 'real world' annotation formats
+> + ✅ add several built-in 'real world' annotation formats
 > + ✅ add ability to create your own annotation format
 
 ## Installation
