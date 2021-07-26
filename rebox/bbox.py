@@ -1,3 +1,4 @@
+from __future__ import annotations
 """2D bounding box module"""
 
 from copy import deepcopy
@@ -19,6 +20,11 @@ class BBox2D:
         ValueError: If 'box' is not of length 4
         TypeError: If 'box' is not of type {list, tuple, numpy.ndarray, BBox2D
     """
+    yolo = yolo
+    coco = coco
+    pascal = pascal
+    albumentations = albumentations
+    label_studio = label_studio
 
     def __init__(self, x, format:BBoxFormat):
         x = self._validate_box(x)
@@ -27,13 +33,13 @@ class BBox2D:
 
     def as_format(self, target_format: BBoxFormat, image_width=None, image_height=None):
         # converting directly between all available formats means combinatorial numbers of operations. Therefore, to simply conversion, we convert 'self' to an interim 'XYXY' style, then apply scale, then convert interim style to target style
-        interim = _xyxyify(self)
-        scaled_interim = _rescale(interim, target_format, image_width, image_height)
-        target_bbox = _restyle(scaled_interim, target_format)
+        interim = self._xyxyify(self)
+        scaled_interim = self._rescale(interim, target_format, image_width, image_height)
+        target_bbox = self._restyle(scaled_interim, target_format)
         return target_bbox
 
     # helper for self.to_format()
-    def _restyle(bbox: BBox2D, target_format: BBoxFormat) -> BBox2D # keeps scale intact
+    def _restyle(self, bbox: BBox2D, target_format: BBoxFormat) -> BBox2D: # keeps scale intact
         """
         Convert the format of 'bbox' of style 'XYXY'
         to 'target_format', without changing scale.
@@ -59,7 +65,7 @@ class BBox2D:
         return BBox2D(output, output_format)
 
     # helper for self.to_format()
-    def _rescale(source_bbox: BBox2D, target_format: BBoxFormat, image_width=None, image_height=None) -> BBox2D:
+    def _rescale(self, source_bbox: BBox2D, target_format: BBoxFormat, image_width=None, image_height=None) -> BBox2D:
 
         source_rel  = source_bbox.format.is_relative
         target_rel = target_format.is_relative
@@ -71,11 +77,11 @@ class BBox2D:
                 xyxy_simple_rescale(
                     coords = source_bbox.value,
                     from_scale = source_bbox.format.scale,
-                    to_scale = target.format.scale),
+                    to_scale = target_format.scale),
                 source_bbox.format
                 )
         elif (source_rel and (not target_rel)):
-            _validate_image_size(image_width, image_height)
+            self._validate_image_size(image_width, image_height)
             scaled_bbox = BBox2D(
                 xyxy_scaled_rel_to_abs(
                     coords = source_bbox.value,
@@ -85,11 +91,11 @@ class BBox2D:
                 source_bbox.format
             )
         elif ((not source_rel) and target_rel):
-            _validate_image_size(image_width, image_height)
+            self._validate_image_size(image_width, image_height)
             scaled_bbox = BBox2D(
                 xyxy_abs_to_scaled_rel(
                     coords = source_bbox.value,
-                    to_scale = target.format.scale,
+                    to_scale = target_format.scale,
                     width = image_width,
                     height = image_height),
                 source_bbox.format
@@ -100,7 +106,7 @@ class BBox2D:
         return scaled_bbox
 
     # helper for self.to_format()
-    def _xyxyify(bbox: BBox2D) -> BBox2D:
+    def _xyxyify(self, bbox: BBox2D) -> BBox2D:
         """
         Convert 'bbox' style to 'XYXY'.
         Keep scale unchanged.
@@ -127,7 +133,7 @@ class BBox2D:
         return BBox2D(output, xyxy_format_same_scale)
 
     # helper for self.to_format()
-    def _validate_image_size(image_width, image_height):
+    def _validate_image_size(self, image_width, image_height):
         if image_width is None or image_height is None:
             raise ValueError("Must enter 'image_width' and 'image_height' when converting across absolute and relative formats.")
         if image_width <= 0 or image_height <= 0:
@@ -163,7 +169,7 @@ class BBox2D:
 
     def __str__(self):
         print(self.format.scale)
-        return f"bbox: {self.value}, format style: {self.format.style}, format scale: {self.format.scale}"
+        return f"Coordinates: {self.value}, Style: {self.format.style}, Scale: {self.format.scale}"
 
     # Python magic methods
 
@@ -317,12 +323,6 @@ class BBox2D:
             self.value[3] = value
         else:
             raise AttributeError("height not available for format: f{self.format}")
-
-    def yolo(self, image_width=None, image_height=None):
-        if (self.format.is_relative != yolo.is_relative):
-            # converting across relative/absolute scales
-            _validate_image_size(image_width, image_height):
-        return self.to_format(target_format=yolo, image_width, image_height)
 
 if __name__ == "__main__":
     bbox = BBox2D([15,20,40,50], label_studio)

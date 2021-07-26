@@ -1,10 +1,8 @@
 """Main package initialization"""
 
-from bboxconvert.bbox import BBox2D
-from bboxconvert.format import BBoxFormat
-from bboxconvert.common_formats import yolo, coco, pascal, albumentations, label_studio
-from bboxconvert.converter import bboxconvert
-from bboxconvert.elements import *
+from rebox.bbox import BBox2D
+from rebox.format import BBoxFormat
+from rebox.common_formats import yolo, coco, pascal, albumentations, label_studio
 
 
 __author__ = "Jason Sohn"
