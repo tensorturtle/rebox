@@ -4,14 +4,12 @@
 
 
 Fluidly convert between 2D rectangular bounding box annotation formats in Python.
+Instead of writing yet more utility functions to convert between bounding box formats, use this instead.
 
 > **Like [varunagrawal/bbox](https://github.com/varunagrawal/bbox), but**
 > + ❌ only 2D bounding boxes are supported
 > + ✅ add many more built-in 'real world' annotation formats
 > + ✅ add ability to create your own annotation format
-
-
-A lot of object detection codebases have their own bounding box manipulation utility functions. Don't Repeat Yourself and use this instead.
 
 ## Installation
 
