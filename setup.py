@@ -9,7 +9,7 @@ README = (HERE / "README.md").read_text()
 
 # This call to setup() does all the work
 setup(
-    name="bboxconvert",
+    name="rebox",
     version="1.0.0",
     description="Convert between bounding box annotation formats",
     long_description=README,
@@ -23,7 +23,7 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
     ],
-    packages=["bboxconvert"],
+    packages=["rebox"],
     include_package_data=True,
     install_requires=[],
     entry_points={
@@ -31,4 +31,3 @@ setup(
         ]
     },
 )
-

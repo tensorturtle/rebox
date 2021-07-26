@@ -17,7 +17,6 @@ class BBoxFormat:
     """
 
     def __init__(self, style, scale):
-        # validate inputs
         valid_styles = ["XmYmWH, XcYcWH, XYXY"] # currently 3 supported styles
 
         try:

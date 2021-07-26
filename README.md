@@ -12,7 +12,7 @@ A lot of object detection codebases have their own bounding box manipulation uti
 
 Install with pip:
 ```
-pip install bboxconvert
+pip install rebox
 ```
 
 ## Usage
@@ -42,4 +42,3 @@ Common formats such as YOLO, COCO, PASCAL_VOC, Albumentations, and Label Studio 
 |   **PASCAL_VOC**   	| Pixels [0, width] or [0, height] 	|     `[ x_min, y_min, x_MAX, y_MAX ]`    	|
 | **Albumentations** 	|         Normalized [0,1]         	|     `[x_min, y_min, x_MAX, y_MAX ]`    	|
 | **Label Studio**    | Normalized percentage [0, 100]    |     `[x_min, y_min, width, height]`     |
-

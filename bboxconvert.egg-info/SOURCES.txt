@@ -3,8 +3,13 @@ MANIFEST.in
 README.md
 setup.py
 bboxconvert/__init__.py
+bboxconvert/bbox.py
 bboxconvert/bboxconvert.py
+bboxconvert/common_formats.py
+bboxconvert/converter.py
 bboxconvert/elements.py
+bboxconvert/format.py
+bboxconvert/test-with-pytest.py
 bboxconvert.egg-info/PKG-INFO
 bboxconvert.egg-info/SOURCES.txt
 bboxconvert.egg-info/dependency_links.txt
