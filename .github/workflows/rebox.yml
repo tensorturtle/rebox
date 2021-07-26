@@ -46,7 +46,7 @@ jobs:
         # Repository upload token - get it from codecov.io. Required only for private repositories
         token: dfee4473-f12d-4fac-81b7-319ae225590d
         # Comma-separated list of files to upload
-        files: # optional
+        files: rebox
         # Directory to search for coverage reports.
         directory: # optional
         # Flag upload to group coverage metrics (e.g. unittests | integration | ui,chrome)
