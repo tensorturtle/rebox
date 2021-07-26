@@ -87,3 +87,7 @@ jobs:
         verbose: # optional
         # Directory in which to execute codecov.sh
         working-directory: # optional
+    - name: Upload to Codecov
+      run: | 
+        pip install pytest-cov
+        pytest --cov=./
