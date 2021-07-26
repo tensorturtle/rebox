@@ -46,9 +46,9 @@ jobs:
         # Repository upload token - get it from codecov.io. Required only for private repositories
         token: dfee4473-f12d-4fac-81b7-319ae225590d
         # Comma-separated list of files to upload
-        files: rebox
+        files: #optional
         # Directory to search for coverage reports.
-        directory: # optional
+        directory: rebox
         # Flag upload to group coverage metrics (e.g. unittests | integration | ui,chrome)
         flags: # optional
         # The commit SHA of the parent for which you are uploading coverage. If not present, the parent will be determined using the API of your repository provider.  When using the repository providers API, the parent is determined via finding the closest ancestor to the commit.
@@ -87,3 +87,7 @@ jobs:
         verbose: # optional
         # Directory in which to execute codecov.sh
         working-directory: # optional
+    - name: "Upload coverage to Codecov"
+      uses: codecov/codecov-action@v1
+      with:
+        fail_ci_if_error: true
