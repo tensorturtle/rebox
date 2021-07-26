@@ -1,10 +1,14 @@
 # bboxconvert
 
-## WARNING: This package is not ready for use. It is currently in development. Expected release date: 2021-08-01
-
 [![CircleCI](https://circleci.com/gh/tensorturtle/bboxconvert.svg?style=shield)](https://app.circleci.com/pipelines/github/tensorturtle/bboxconvert)
 
 Fluidly convert between 2D rectangular bounding box annotation formats in Python.
+
+Like [varunagrawal/bbox](https://github.com/varunagrawal/bbox)
+  - only 2D bounding boxes are supported
+  + add many more built-in 'real world' annotation formats
+  + add ability to create your own.
+
 
 A lot of object detection codebases have their own bounding box manipulation utility functions. Don't Repeat Yourself and use this instead.
 
