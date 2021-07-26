@@ -24,7 +24,7 @@ pip install rebox
 Example: converting from YOLO-style to COCO-style bounding box format.
 
 ```python3
-from bboxconvert import BBox2D, BBoxFormat, bboxconvert
+from rebox import BBox2D
 
 image_height = 360 # pixels
 image_width = 640 # pixels
