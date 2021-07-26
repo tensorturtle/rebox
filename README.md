@@ -7,8 +7,8 @@ Fluidly convert between 2D rectangular bounding box annotation formats in Python
 
 Like [varunagrawal/bbox](https://github.com/varunagrawal/bbox), but
   + ❌ only 2D bounding boxes are supported
-  + 🆕 add many more built-in 'real world' annotation formats
-  + 🆕 add ability to create your own annotation format
+  + ✅ add many more built-in 'real world' annotation formats
+  + ✅ add ability to create your own annotation format
 
 
 A lot of object detection codebases have their own bounding box manipulation utility functions. Don't Repeat Yourself and use this instead.
