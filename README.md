@@ -1,7 +1,6 @@
-# rebox
+# rebox: IN DEVELOPMENT; NOT READY TO USE
 
 [![CircleCI](https://circleci.com/gh/tensorturtle/bboxconvert.svg?style=shield)](https://app.circleci.com/pipelines/github/tensorturtle/bboxconvert)
-
 
 Fluidly convert between 2D rectangular bounding box annotation formats in Python.
 
