@@ -142,7 +142,7 @@ class BBox2D:
     # helper for self.__init__()
     def _validate_box(self, x):
         if isinstance(x, BBox2D):
-            x = x.numpy(mode=mode)
+            x = x
 
         elif isinstance(x, (list, tuple)):
             if len(x) != 4:

@@ -17,7 +17,7 @@ def XcYcWH_to_XYXY(coords, pixel=False):
     x_min = x_center - (width/2)
     y_min = y_center - (height/2)
     x_max = x_center + (width/2)
-    x_max = y_center + (height/2)
+    y_max = y_center + (height/2)
 
     return [x_min, y_min, x_max, y_max]
 
