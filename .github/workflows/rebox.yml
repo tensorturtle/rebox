@@ -44,9 +44,9 @@ jobs:
       uses: codecov/codecov-action@v2.0.2
       with:
         # Repository upload token - get it from codecov.io. Required only for private repositories
-        token: dfee4473-f12d-4fac-81b7-319ae225590d
+        token: #optional
         # Comma-separated list of files to upload
-        files: #optional
+        files: rebox
         # Directory to search for coverage reports.
         directory:
         # Flag upload to group coverage metrics (e.g. unittests | integration | ui,chrome)
