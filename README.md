@@ -1,12 +1,16 @@
 # bboxconvert
 
-## WARNING: This package is not ready for use. It is currently in development. Expected release date: 2021-08-01
-
 [![CircleCI](https://circleci.com/gh/tensorturtle/bboxconvert.svg?style=shield)](https://app.circleci.com/pipelines/github/tensorturtle/bboxconvert)
+
 
 Fluidly convert between 2D rectangular bounding box annotation formats in Python.
 
-A lot of object detection codebases have their own bounding box manipulation utility functions. Don't Repeat Yourself and use this instead.
+Instead of writing yet more utility functions to convert between bounding box formats, use this instead.
+
+> **Like [varunagrawal/bbox](https://github.com/varunagrawal/bbox), but**
+> + ❌ only support 2D bounding boxes
+> + ✅ add several built-in 'real world' annotation formats
+> + ✅ add ability to create your own annotation format
 
 ## Installation
 
@@ -30,7 +34,7 @@ yolo_bbox = BBox2D([0.31, 0.5, 0.2, 0.6], yolo_format) # using built-in 'yolo_fo
 coco_bbox = bboxconvert(yolo_bbox, coco_format) # using built-in 'coco_format'
 ```
 
-Common formats such as YOLO, COCO, PASCAL_VOC, Albumentations, and Label Studio are provided already. If you wish to make your own coordinates format, instantiate the BBoxFormat class.
+Common formats such as YOLO, COCO, PASCAL_VOC, Albumentations, and Label Studio are provided as a convenience. If you wish to make your own coordinates format, instantiate the BBoxFormat class.
 
 
 ### Common Bounding Box Formats
