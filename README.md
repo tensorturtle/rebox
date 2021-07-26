@@ -1,7 +1,5 @@
 # rebox: IN DEVELOPMENT; NOT READY TO USE
 
-[![CircleCI](https://circleci.com/gh/tensorturtle/rebox/tree/main.svg?style=svg)](https://circleci.com/gh/tensorturtle/rebox/tree/main)
-
 Fluidly convert between 2D rectangular bounding box annotation formats in Python.
 
 Instead of writing yet more utility functions to convert between bounding box formats, use this instead.
