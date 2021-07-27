@@ -30,10 +30,9 @@ pip install rebox
 
 test
 
-```python:readme_examples.py
-```
+```py
+# readme_examples.py
 
-```python3
 from rebox import BBox
 from rebox.formats import coco
 
@@ -49,6 +48,8 @@ print(coco_bbox.h) # 15
 # set values
 coco_bbox.x1 = 60
 print(coco_bbox.x1) # 60
+
+
 ```
 
 These attributes are only implemented for the current format,
