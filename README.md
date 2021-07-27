@@ -33,7 +33,7 @@ The simplest conversion keeps the same scale, but with different styles:
 
 ```python3
 from rebox import BBox
-from rebox import coco, pascal
+from rebox.formats import coco, pascal
 
 coco_bbox = BBox([40,50,20,15], coco)
 pascal_bbox = coco_bbox.as_format(pascal)
@@ -48,7 +48,7 @@ This time, pass in image height and width, to convert across pixel values and re
 
 ```python3
 from rebox import BBox
-from rebox import yolo, coco
+from rebox.formats import yolo, coco
 
 image_height = 360 # pixels
 image_width = 640 # pixels
