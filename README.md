@@ -2,7 +2,7 @@
 
 ![Build](https://github.com/tensorturtle/rebox/actions/workflows/build.yml/badge.svg)
 [![codecov](https://codecov.io/gh/tensorturtle/rebox/branch/main/graph/badge.svg?token=H7HTDYNIAV)](https://codecov.io/gh/tensorturtle/rebox)
-
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/b16458c671284c5e98c65e6124ad4c79)](https://www.codacy.com/gh/tensorturtle/rebox/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tensorturtle/rebox&amp;utm_campaign=Badge_Grade)
 
 
 Fluidly convert between 2D rectangular bounding box annotation formats in Python.
