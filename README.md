@@ -28,9 +28,6 @@ pip install rebox
 
 ### Level 0: Create a `BBox` and access/modify its attributes
 
-```python:examples/bbox_creation.py
-```
-
 ```python3
 from rebox import BBox
 from rebox.formats import coco
