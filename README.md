@@ -31,7 +31,7 @@ pip install rebox
 test
 
 ```py
-# readme_examples.py
+# readme_examples/create_bbox.py
 
 from rebox import BBox
 from rebox.formats import coco
