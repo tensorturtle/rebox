@@ -102,13 +102,13 @@ print(coco_bbox.value) # array([134.4,  72. , 128. , 216. ])
 # readme_examples/iou.py
 
 from rebox import BBox
-from rebox.formats coco, pascal
-from rebox.ops import IOU
+from rebox.formats import coco, pascal
+from rebox.ops import iou
 
 one_bbox = BBox([40,50,20,10], coco)
 two_bbox = BBox([45,60, 30, 20], pascal)
 
-iou = IOU(one_bbox, two_bbox)
+iou = iou(one_bbox, two_bbox)
 
 ```
 
