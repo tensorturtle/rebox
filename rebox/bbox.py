@@ -202,13 +202,17 @@ class BBox:
     @property
     def value(self):
         """
-        Value of length 4 that represents bounding box.
-        Order and meaning of values depend on format.
+        Return numpy ndarray of length 4
+        representing the coordinates of bounding box,
+        formatted as `self.format`.
         """
         return self._value
 
     @property
     def x1(self):
+        """
+        get x value of left-top corner of bounding box
+        """
         # if xyxy, XmYmWH
         if self.format.style in ["XYXY", "XmYmWH"]:
             return self.value[0]
@@ -217,6 +221,9 @@ class BBox:
 
     @x1.setter
     def x1(self, value):
+        """
+        set x value of left-top corner of bounding box
+        """
         # if xyxy, XmYmWH
         if self.format.style in ["XYXY", "XmYmWH"]:
             self.value[0] = value
@@ -225,22 +232,31 @@ class BBox:
 
     @property
     def x2(self):
+        """
+        get x value of right-bottom corner of bounding box
+        """
         # if xyxy, XmYmWH
-        if self.format.style in ["XYXY", "XmYmWH"]:
+        if self.format.style in ["XYXY"]:
             return self.value[2]
         else:
             raise AttributeError("x2 attribute not available for format: f{self.format}")
 
     @x2.setter
     def x2(self, value):
+        """
+        set x value of right-bottom corner of bounding box
+        """
         # if xyxy, XmYmWH
-        if self.format.style in ["XYXY", "XmYmWH"]:
+        if self.format.style in ["XYXY"]:
             self.value[2] = value
         else:
             raise AttributeError("x1 attribute not available for format: f{self.format}")
 
     @property
     def xc(self):
+        """
+        get x value of center point of bounding box
+        """
         if self.format.style in ["XcYcWH"]:
             return self.value[0]
         else:
@@ -248,6 +264,9 @@ class BBox:
 
     @xc.setter
     def xc(self, value):
+        """
+        set x value of center point of bounding box
+        """
         if self.format.style in ["XcYcWH"]:
             self.value[0] = value
         else:
@@ -255,6 +274,9 @@ class BBox:
 
     @property
     def y1(self):
+        """
+        get y value of left-top corner of bounding box
+        """
         if self.format.style in ["XYXY", "XmYmWH"]:
             return self.value[1]
         else:
@@ -262,6 +284,9 @@ class BBox:
 
     @y1.setter
     def y1(self, value):
+        """
+        set y value of left-top corner of bounding box
+        """
         if self.format.style in ["XYXY", "XmYmWH"]:
             self.value[1] = value
         else:
@@ -269,20 +294,29 @@ class BBox:
 
     @property
     def y2(self):
-        if self.format.style in ["XYXY", "XmYmWH"]:
+        """
+        get y value of right-bottom corner of bounding box
+        """
+        if self.format.style in ["XYXY"]:
             return self.value[3]
         else:
             raise AttributeError("y2 attribute not available for format: f{self.format}")
 
     @y2.setter
     def y2(self, value):
-        if self.format.style in ["XYXY", "XmYmWH"]:
+        """
+        set y value of right-bottom corner of bounding box
+        """
+        if self.format.style in ["XYXY"]:
             self.value[3] = value
         else:
             raise AttributeError("y2 attribute not available for format: f{self.format}")
 
     @property
     def yc(self):
+        """
+        get y value of center point of bounding box
+        """
         if self.format.style in ["XcYcWH"]:
             return self.value[1]
         else:
@@ -290,6 +324,9 @@ class BBox:
 
     @yc.setter
     def yc(self, value):
+        """
+        set y value of center point of bounding box
+        """
         if self.format in ["XcYcWH"]:
             self.value[1] = value
         else:
@@ -297,6 +334,9 @@ class BBox:
 
     @property
     def w(self):
+        """
+        get width of bounding box
+        """
         if self.format.style in ["XcYcWH", "XmYmWH"]:
             return self.value[2]
         else:
@@ -304,6 +344,9 @@ class BBox:
 
     @w.setter
     def w(self, value):
+        """
+        set width of bounding box
+        """
         if self.format.style in ["XcYcWH", "XmYmWH"]:
             self.value[2] = value
         else:
@@ -311,6 +354,9 @@ class BBox:
 
     @property
     def h(self):
+        """
+        get height of bounding box
+        """
         if self.format.style in ["XcYcWH", "XmYmWH"]:
             return self.value[3]
         else:
@@ -318,6 +364,9 @@ class BBox:
 
     @h.setter
     def h(self, value):
+        """
+        set height of bounding box
+        """
         if self.format.style in ["XcYcWH", "XmYmWH"]:
             self.value[3] = value
         else:
