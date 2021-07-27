@@ -1,4 +1,4 @@
-# REBOX
+# rebox
 ### bounding boxes done right.
 
 ![Build](https://github.com/tensorturtle/rebox/actions/workflows/build.yml/badge.svg)
