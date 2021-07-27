@@ -13,9 +13,9 @@ Fluidly convert between native representations of 2D rectangular bounding box an
 Instead of writing yet more utility functions to convert between bounding box formats, use this instead.
 
 > **Like [varunagrawal/bbox](https://github.com/varunagrawal/bbox), but**
->   + ⚠️ only support 2D bounding boxes
->   + ✅ add several built-in 'real world' annotation formats
->   + ✅ add ability to create and use your own annotation format
+> +   ⚠️ only support 2D bounding boxes
+> +   ✅ add several built-in 'real world' annotation formats
+> +   ✅ add ability to create and use your own annotation format
 
 ## Installation
 
