@@ -1,6 +1,7 @@
 # rebox: IN DEVELOPMENT; NOT READY TO USE
 
 ![Build](https://github.com/tensorturtle/rebox/actions/workflows/build.yml/badge.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bb672c0f7b4c4aab9ab8042c07c8f7dc)](https://app.codacy.com/gh/tensorturtle/rebox?utm_source=github.com&utm_medium=referral&utm_content=tensorturtle/rebox&utm_campaign=Badge_Grade_Settings)
 [![codecov](https://codecov.io/gh/tensorturtle/rebox/branch/main/graph/badge.svg?token=H7HTDYNIAV)](https://codecov.io/gh/tensorturtle/rebox)
 
 
