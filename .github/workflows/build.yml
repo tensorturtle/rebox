@@ -41,6 +41,6 @@ jobs:
     - name: Generate codecov report
       run: |
         pip install coverage
-        coverage run -m pytest rebox/test-with-pytest.py
+        coverage run -m pytest tests/*
     - name: Upload coverage to codecov
       uses: codecov/codecov-action@v1
