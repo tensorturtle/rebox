@@ -47,8 +47,8 @@ def iou(a, b):
 
     intersection = inter_w * inter_h
 
-    a_area = a.width * a.height
-    b_area = b.width * b.height
+    a_area = a.w * a.h
+    b_area = b.w * b.h
 
     iou = intersection / (a_area + b_area - intersection)
 
