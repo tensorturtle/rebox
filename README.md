@@ -40,11 +40,11 @@ pascal_bbox = coco_bbox.as_format(pascal)
 
 print(pascal_bbox) # "Coordinates: [40 50 59 64], Style: XYXY, Scale: None"
 print(pascal_bbox.value) # [40 50 59 64]
+```
 
 ### Level 2: Converting across absolute/relative formats
 
 This time, pass in image height and width, to convert across pixel values and relative scale values.
-
 
 ```python3
 from rebox import BBox
@@ -60,7 +60,23 @@ coco_bbox = yolo_bbox.as_format(coco, image_width, image_height) # to convert to
 print(coco_bbox.value) # array([134.4,  72. , 128. , 216. ])
 ```
 
-Level 3: Operations on `BBox`es
+### Level 3: Operations on `BBox`es
+
+`rebox` includes several common utility operations on bounding boxes.
+
+#### IOU (Intersection over Union) of two bounding boxes
+
+```python3
+from rebox import BBox
+from rebox.formats coco, pascal
+from rebox.ops import IOU
+
+one_bbox = BBox([40,50,20,10], coco)
+two_bbox = BBox([45,60, 30, 20], pascal)
+
+iou = IOU(one_bbox, two_bbox)
+```
+
 
 Example: converting from YOLO-style to COCO-style bounding box format.
 
