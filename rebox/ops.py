@@ -1,8 +1,8 @@
 import numpy as np
-from rebox import BBox
 from rebox import BBoxFormat
+from rebox import BBox
 
-def iou(a, b):
+def iou(a:BBox, b:BBox):
     """
     Compute the Jaccarrd Index / Intersection over Union of a pair of 2D bounding boxes.
 
@@ -13,13 +13,11 @@ def iou(a, b):
     Returns:
         The IoU of the two bounding boxes.
     """
-
     # dealing with various formats:
     # unify style to XYXY,
     # keep scale, and account for it in algorithm
 
     scale = a.format.scale
-    style = a.format.style
 
     unified_format = BBoxFormat("XYXY", scale)
 
