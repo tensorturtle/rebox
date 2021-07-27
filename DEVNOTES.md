@@ -13,5 +13,14 @@ https://about.codecov.io/blog/python-code-coverage-using-github-actions-and-code
 Using:
 https://github.com/zakhenry/embedme#why
 
-1. Install with `npx install embedme`
-2. Run locally with `embedme` while in root directory.
+Install with `npx install embedme`
+
+In README.md, create a code block with the filename of the code file to be embedded as a comment. 
+Use `py` to signal Python language.
+
+For example,
+> ```py
+> # readme_example_code.py
+> ```
+
+Run `npx embedme README.md` to embed the code.
