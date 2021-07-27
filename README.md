@@ -28,8 +28,6 @@ pip install rebox
 
 ### Level 0: Create a `BBox` and access/modify its attributes
 
-test
-
 ```py
 # readme_examples/create_bbox.py
 
@@ -59,33 +57,16 @@ and are not automatically converted. For example, trying to access `x2` for a `X
 
 The simplest conversion keeps the same scale, but with different styles:
 
-```python3
-from rebox import BBox
-from rebox.formats import coco, pascal
-
-coco_bbox = BBox([40,50,20,15], coco)
-pascal_bbox = coco_bbox.as_format(pascal)
-
-print(pascal_bbox) # "Coordinates: [40 50 59 64], Style: XYXY, Scale: None"
-print(pascal_bbox.value) # [40 50 59 64]
+```py
+# readme_examples/simple_conversion.py
 ```
 
 ### Level 2: Converting across absolute/relative formats
 
 This time, pass in image height and width, to convert across pixel values and relative scale values.
 
-```python3
-from rebox import BBox
-from rebox.formats import yolo, coco
-
-image_height = 360 # pixels
-image_width = 640 # pixels
-
-yolo_bbox = BBox([0.31, 0.5, 0.2, 0.6], yolo) # using built-in 'yolo_format'
-
-coco_bbox = yolo_bbox.as_format(coco, image_width, image_height) # to convert to built-in format 'coco'
-
-print(coco_bbox.value) # array([134.4,  72. , 128. , 216. ])
+```py
+# readme_examples/absolute_relative_conversion.py
 ```
 
 ### Level 3: Operations on `BBox`es
@@ -94,15 +75,8 @@ print(coco_bbox.value) # array([134.4,  72. , 128. , 216. ])
 
 #### IOU (Intersection over Union) of two bounding boxes
 
-```python3
-from rebox import BBox
-from rebox.formats coco, pascal
-from rebox.ops import IOU
-
-one_bbox = BBox([40,50,20,10], coco)
-two_bbox = BBox([45,60, 30, 20], pascal)
-
-iou = IOU(one_bbox, two_bbox)
+```py
+# readme_examples/iou.py
 ```
 
 ### Common Bounding Box Formats
