@@ -44,3 +44,5 @@ jobs:
         coverage run -m pytest tests/*
     - name: Upload coverage to codecov
       uses: codecov/codecov-action@v1
+    - name: Markdown Embed Code From File
+      uses: tokusumi/markdown-embed-code@v1.0.0
