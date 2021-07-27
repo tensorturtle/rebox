@@ -21,7 +21,7 @@ Use `py` to signal Python language.
 For example, (without escape backslash)
 > \```py
 > 
-> # readme_example_code.py
+> \# readme_example_code.py
 > 
 > \```
 
