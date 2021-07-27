@@ -1,5 +1,5 @@
 #from __future__ import annotations
-"""2D bounding box module"""
+"""2D bounding box module."""
 
 from copy import deepcopy
 import numpy as np
@@ -9,6 +9,7 @@ from .common_formats import yolo, coco, pascal, albumentations, label_studio
 from .elements import XcYcWH_to_XYXY, XYXY_to_XcYcWH, XmYmWH_to_XYXY, XYXY_to_XmYmWH, xyxy_scaled_rel_to_abs, xyxy_abs_to_scaled_rel, xyxy_simple_rescale
 
 class BBox2D:
+
     """
     Class to represent a 2D bounding box.
 
@@ -20,15 +21,16 @@ class BBox2D:
         ValueError: If 'box' is not of length 4
         TypeError: If 'box' is not of type {list, tuple, numpy.ndarray, BBox2D
     """
+
     yolo = yolo
     coco = coco
     pascal = pascal
     albumentations = albumentations
     label_studio = label_studio
 
-    def __init__(self, x, format:BBoxFormat):
+    def __init__(self, x, bbox_format:BBoxFormat):
         x = self._validate_box(x)
-        self._format = format
+        self._format = bbox_format
         self._value = x
 
     def as_format(self, target_format: BBoxFormat, image_width=None, image_height=None):
@@ -39,7 +41,8 @@ class BBox2D:
         return target_bbox
 
     # helper for self.to_format()
-    def _restyle(self, bbox, target_format: BBoxFormat): # keeps scale intact
+    @staticmethod
+    def _restyle(bbox, target_format: BBoxFormat): # keeps scale intact
         """
         Convert the format of 'bbox' of style 'XYXY'
         to 'target_format', without changing scale.
@@ -106,7 +109,8 @@ class BBox2D:
         return scaled_bbox
 
     # helper for self.to_format()
-    def _xyxyify(self, bbox):
+    @staticmethod
+    def _xyxyify(bbox):
         """
         Convert 'bbox' style to 'XYXY'.
         Keep scale unchanged.
@@ -133,14 +137,16 @@ class BBox2D:
         return BBox2D(output, xyxy_format_same_scale)
 
     # helper for self.to_format()
-    def _validate_image_size(self, image_width, image_height):
+    @staticmethod
+    def _validate_image_size(image_width, image_height):
         if image_width is None or image_height is None:
             raise ValueError("Must enter 'image_width' and 'image_height' when converting across absolute and relative formats.")
         if image_width <= 0 or image_height <= 0:
             raise ValueError("Image width and height must be greater than zero.")
 
     # helper for self.__init__()
-    def _validate_box(self, x):
+    @staticmethod
+    def _validate_box(x):
         if isinstance(x, BBox2D):
             x = x
 
