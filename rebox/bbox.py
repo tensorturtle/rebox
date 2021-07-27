@@ -1,4 +1,4 @@
-from __future__ import annotations
+#from __future__ import annotations
 """2D bounding box module"""
 
 from copy import deepcopy
