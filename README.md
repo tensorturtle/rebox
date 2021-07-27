@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/tensorturtle/rebox/branch/main/graph/badge.svg?token=H7HTDYNIAV)](https://app.codecov.io/gh/tensorturtle/rebox)
 [![codacy](https://img.shields.io/codacy/grade/b16458c671284c5e98c65e6124ad4c79)](https://app.codacy.com/gh/tensorturtle/rebox/dashboard)
 
-## Bounding boxes done right.
+## Bounding boxes done right
 
 **WARNING: CURRENTLY IN ALPHA DEVELOPMENT**
 
@@ -13,14 +13,15 @@ Fluidly convert between native representations of 2D rectangular bounding box an
 Instead of writing yet more utility functions to convert between bounding box formats, use this instead.
 
 > **Like [varunagrawal/bbox](https://github.com/varunagrawal/bbox), but**
-> + ⚠️ only support 2D bounding boxes
-> + ✅ add several built-in 'real world' annotation formats
-> + ✅ add ability to create and use your own annotation format
+>   + ⚠️ only support 2D bounding boxes
+>   + ✅ add several built-in 'real world' annotation formats
+>   + ✅ add ability to create and use your own annotation format
 
 ## Installation
 
 Install with pip:
-```
+
+```bash
 pip install rebox
 ```
 
@@ -41,13 +42,12 @@ coco_bbox = yolo_bbox.as_format(coco, image_width, image_height) # to convert to
 
 Common formats such as YOLO, COCO, PASCAL_VOC, Albumentations, and Label Studio are provided as a convenience. If you wish to make your own coordinates format, instantiate the BBoxFormat class.
 
-
 ### Common Bounding Box Formats
 
 |                	|               Scale              	|           Style          	|
 |--------------:	|:--------------------------------:	|:-------------------------------------:	|
-|      **YOLO**      	|         Normalized [0,1]         	| `[ x_Center, y_Center, width, height ]` 	|
-|      **COCO**      	| Pixels [0, width] or [0, height] 	|    `[ x_min, y_min, width, height ]`    	|
-|   **PASCAL_VOC**   	| Pixels [0, width] or [0, height] 	|     `[ x_min, y_min, x_MAX, y_MAX ]`    	|
-| **Albumentations** 	|         Normalized [0,1]         	|     `[x_min, y_min, x_MAX, y_MAX ]`    	|
-| **Label Studio**    | Normalized percentage [0, 100]    |     `[x_min, y_min, width, height]`     |
+|      **YOLO**      	|         Normalized (0,1)        	| `[ x_Center, y_Center, width, height ]` 	|
+|      **COCO**      	| Pixels                         	|    `[ x_min, y_min, width, height ]`    	|
+|   **PASCAL_VOC**   	| Pixels                         	|     `[ x_min, y_min, x_MAX, y_MAX ]`    	|
+| **Albumentations** 	|         Normalized (0,1)         	|     `[x_min, y_min, x_MAX, y_MAX ]`    	|
+| **Label Studio**    | Normalized percentage (0, 100)    |     `[x_min, y_min, width, height]`     |
