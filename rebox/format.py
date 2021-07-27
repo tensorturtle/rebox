@@ -1,12 +1,15 @@
 class BBoxFormat:
+
     """
     Class from which bounding box formats are generated.
     The built-in common formats are created with this class.
     Feel free to create your own from this class.
 
-    Args:
-        style = choose from 3 ways to represent a rectangular box XmYmWH (left-top corner, width, and height), XcYcWH (center point, width and height), or XYXY (left-top corner, and bottom-right corner)
-        scale = If using pixel coordinates, enter None. Otherwise, enter maximum value of scale (for example, 100 for scaling to between 0 and 100, like percent)
+    Attributes:
+        style = one of 3 ways to represent a rectangular box XmYmWH (left-top corner, width, and height), XcYcWH (center point, width and height), or XYXY (left-top corner, and bottom-right corner)
+        scale = None for pixel value, or integer for range of normalized value (relative to image width or height)
+        is_relative = syntactic sugar; boolean False if scale is None, and True if it is a number.
+
 
     Raises:
         ValueError: If scale is negative
@@ -17,8 +20,13 @@ class BBoxFormat:
     """
 
     def __init__(self, style, scale):
-        valid_styles = ["XmYmWH, XcYcWH, XYXY"] # currently 3 supported styles
 
+        """
+        Args:
+            style = choose from 3 ways to represent a rectangular box XmYmWH (left-top corner, width, and height), XcYcWH (center point, width and height), or XYXY (left-top corner, and bottom-right corner)
+            scale = If using pixel coordinates, enter None. Otherwise, enter maximum value of scale (for example, 100 for scaling to between 0 and 100, like percent)
+        """
+        valid_styles = ["XmYmWH, XcYcWH, XYXY"] # currently 3 supported styles
         try:
             style in valid_styles
         except ValueError as err:
