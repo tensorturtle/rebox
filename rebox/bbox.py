@@ -3,8 +3,8 @@
 from copy import deepcopy
 import numpy as np
 
-from .format import BBoxFormat
-from .common_formats import yolo, coco, pascal, albumentations, label_studio
+from .bboxformat import BBoxFormat
+from .formats import yolo, coco, pascal, albumentations, label_studio
 from .elements import XcYcWH_to_XYXY, XYXY_to_XcYcWH, XmYmWH_to_XYXY, XYXY_to_XmYmWH, xyxy_scaled_rel_to_abs, xyxy_abs_to_scaled_rel, xyxy_simple_rescale
 
 class BBox:
@@ -20,12 +20,6 @@ class BBox:
         ValueError: If 'box' is not of length 4
         TypeError: If 'box' is not of type {list, tuple, numpy.ndarray, BBox
     """
-
-    yolo = yolo
-    coco = coco
-    pascal = pascal
-    albumentations = albumentations
-    label_studio = label_studio
 
     def __init__(self, x, bbox_format:BBoxFormat):
         x = self._validate_box(x)

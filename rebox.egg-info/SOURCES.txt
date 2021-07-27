@@ -3,11 +3,10 @@ README.md
 setup.py
 rebox/__init__.py
 rebox/bbox.py
-rebox/common_formats.py
+rebox/bboxformat.py
 rebox/elements.py
-rebox/format.py
-rebox/obsolete-bboxconvert.py
-rebox/test-with-pytest.py
+rebox/formats.py
+rebox/ops.py
 rebox.egg-info/PKG-INFO
 rebox.egg-info/SOURCES.txt
 rebox.egg-info/dependency_links.txt

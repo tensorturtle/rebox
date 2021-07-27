@@ -1,4 +1,4 @@
-from .format import BBoxFormat
+from .bboxformat import BBoxFormat
 # common research bounding box annotation formats
 yolo = BBoxFormat(style='XcYcWH', scale=1)
 coco = BBoxFormat(style='XmYmWH', scale=None)
