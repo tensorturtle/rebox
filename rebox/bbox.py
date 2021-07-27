@@ -39,7 +39,7 @@ class BBox2D:
         return target_bbox
 
     # helper for self.to_format()
-    def _restyle(self, bbox: BBox2D, target_format: BBoxFormat) -> BBox2D: # keeps scale intact
+    def _restyle(self, bbox, target_format: BBoxFormat): # keeps scale intact
         """
         Convert the format of 'bbox' of style 'XYXY'
         to 'target_format', without changing scale.
@@ -65,7 +65,7 @@ class BBox2D:
         return BBox2D(output, output_format)
 
     # helper for self.to_format()
-    def _rescale(self, source_bbox: BBox2D, target_format: BBoxFormat, image_width=None, image_height=None) -> BBox2D:
+    def _rescale(self, source_bbox, target_format: BBoxFormat, image_width=None, image_height=None):
 
         source_rel  = source_bbox.format.is_relative
         target_rel = target_format.is_relative
@@ -106,7 +106,7 @@ class BBox2D:
         return scaled_bbox
 
     # helper for self.to_format()
-    def _xyxyify(self, bbox: BBox2D) -> BBox2D:
+    def _xyxyify(self, bbox):
         """
         Convert 'bbox' style to 'XYXY'.
         Keep scale unchanged.
