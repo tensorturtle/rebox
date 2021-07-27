@@ -47,6 +47,9 @@ coco_bbox.x1 = 60
 print(coco_bbox.x1) # 60
 ```
 
+These attributes are only implemented for the current format,
+and are not automatically converted. For example, trying to access `x2` for a `XmYmWH` format returns `AttributeError`.
+
 ### Level 1: Converting between the same absolute/relative formats
 
 The simplest conversion keeps the same scale, but with different styles:
