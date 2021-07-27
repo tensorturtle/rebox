@@ -217,7 +217,7 @@ class BBox:
         if self.format.style in ["XYXY", "XmYmWH"]:
             return self.value[0]
         else:
-            raise AttributeError("x1 attribute not available for format: f{self.format}")
+            raise AttributeError(f"x1 attribute not available for format: {self.format.style}")
 
     @x1.setter
     def x1(self, value):
@@ -228,7 +228,7 @@ class BBox:
         if self.format.style in ["XYXY", "XmYmWH"]:
             self.value[0] = value
         else:
-            raise AttributeError("x1 attribute not available for format: f{self.format}")
+            raise AttributeError(f"x1 attribute not available for format: {self.format.style}")
 
     @property
     def x2(self):
@@ -239,7 +239,7 @@ class BBox:
         if self.format.style in ["XYXY"]:
             return self.value[2]
         else:
-            raise AttributeError("x2 attribute not available for format: f{self.format}")
+            raise AttributeError(f"x2 attribute not available for format: {self.format.style}")
 
     @x2.setter
     def x2(self, value):
@@ -250,7 +250,7 @@ class BBox:
         if self.format.style in ["XYXY"]:
             self.value[2] = value
         else:
-            raise AttributeError("x1 attribute not available for format: f{self.format}")
+            raise AttributeError(f"x2 attribute not available for format: {self.format.style}")
 
     @property
     def xc(self):
@@ -260,7 +260,7 @@ class BBox:
         if self.format.style in ["XcYcWH"]:
             return self.value[0]
         else:
-            raise AttributeError("x_center attribute not available for format: f{self.format}")
+            raise AttributeError(f"x_center attribute not available for format: {self.format.style}")
 
     @xc.setter
     def xc(self, value):
@@ -270,7 +270,7 @@ class BBox:
         if self.format.style in ["XcYcWH"]:
             self.value[0] = value
         else:
-            raise AttributeError("x_center attribute not available for format: f{self.format}")
+            raise AttributeError(f"x_center attribute not available for format: {self.format.style}")
 
     @property
     def y1(self):
@@ -280,7 +280,7 @@ class BBox:
         if self.format.style in ["XYXY", "XmYmWH"]:
             return self.value[1]
         else:
-            raise AttributeError("y1 attribute not available for format: f{self.format}")
+            raise AttributeError(f"y1 attribute not available for format: {self.format.style}")
 
     @y1.setter
     def y1(self, value):
@@ -290,7 +290,7 @@ class BBox:
         if self.format.style in ["XYXY", "XmYmWH"]:
             self.value[1] = value
         else:
-            raise AttributeError("y1 attribute not available for format: f{self.format}")
+            raise AttributeError(f"y1 attribute not available for format: {self.format.style}")
 
     @property
     def y2(self):
@@ -300,7 +300,7 @@ class BBox:
         if self.format.style in ["XYXY"]:
             return self.value[3]
         else:
-            raise AttributeError("y2 attribute not available for format: f{self.format}")
+            raise AttributeError(f"y2 attribute not available for format: {self.format.style}")
 
     @y2.setter
     def y2(self, value):
@@ -310,7 +310,7 @@ class BBox:
         if self.format.style in ["XYXY"]:
             self.value[3] = value
         else:
-            raise AttributeError("y2 attribute not available for format: f{self.format}")
+            raise AttributeError(f"y2 attribute not available for format: {self.format.style}")
 
     @property
     def yc(self):
@@ -320,7 +320,7 @@ class BBox:
         if self.format.style in ["XcYcWH"]:
             return self.value[1]
         else:
-            raise AttributeError("y_center attribute not available for format: f{self.format}")
+            raise AttributeError(f"y_center attribute not available for format: {self.format.style}")
 
     @yc.setter
     def yc(self, value):
@@ -330,7 +330,7 @@ class BBox:
         if self.format in ["XcYcWH"]:
             self.value[1] = value
         else:
-            raise AttributeError("y_center attribute not available for format: f{self.format}")
+            raise AttributeError(f"y_center attribute not available for format: {self.format.style}")
 
     @property
     def w(self):
@@ -340,7 +340,7 @@ class BBox:
         if self.format.style in ["XcYcWH", "XmYmWH"]:
             return self.value[2]
         else:
-            raise AttributeError("width not available for format: f{self.format}")
+            raise AttributeError(f"width not available for format: {self.format.style}")
 
     @w.setter
     def w(self, value):
@@ -350,7 +350,7 @@ class BBox:
         if self.format.style in ["XcYcWH", "XmYmWH"]:
             self.value[2] = value
         else:
-            raise AttributeError("width not available for format: f{self.format}")
+            raise AttributeError(f"width not available for format: {self.format.style}")
 
     @property
     def h(self):
@@ -360,7 +360,7 @@ class BBox:
         if self.format.style in ["XcYcWH", "XmYmWH"]:
             return self.value[3]
         else:
-            raise AttributeError("height not available for format: f{self.format}")
+            raise AttributeError(f"height not available for format: {self.format.style}")
 
     @h.setter
     def h(self, value):
@@ -370,7 +370,7 @@ class BBox:
         if self.format.style in ["XcYcWH", "XmYmWH"]:
             self.value[3] = value
         else:
-            raise AttributeError("height not available for format: f{self.format}")
+            raise AttributeError(f"height not available for format: {self.format.style}")
 
 if __name__ == "__main__":
     bbox = BBox([15,20,40,50], label_studio)
