@@ -77,14 +77,9 @@ two_bbox = BBox([45,60, 30, 20], pascal)
 iou = IOU(one_bbox, two_bbox)
 ```
 
-
-Example: converting from YOLO-style to COCO-style bounding box format.
-
-
+### Common Bounding Box Formats
 
 Common formats such as YOLO, COCO, PASCAL_VOC, Albumentations, and Label Studio are provided as a convenience. If you wish to make your own coordinates format, instantiate the BBoxFormat class.
-
-### Common Bounding Box Formats
 
 |                	|               Scale              	|           Style          	|
 |--------------:	|:--------------------------------:	|:-------------------------------------:	|
