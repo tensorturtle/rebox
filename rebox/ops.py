@@ -25,8 +25,8 @@ def iou(a, b):
 
     unified_format = BBoxFormat(style, scale)
 
-    a = a.to_format(unified_format)
-    b = b.to_format(unified_format)
+    a = a.as_format(unified_format)
+    b = b.as_format(unified_format)
 
     xA = np.maximum(a.x1, b.x1)
     yA = np.maximum(a.y1, b.y1)
