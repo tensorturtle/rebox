@@ -18,12 +18,10 @@ def iou(a, b):
     # unify style to XYXY,
     # keep scale, and account for it in algorithm
 
-    assert a.format.style != b.format.style, "IoU calculation not implemented for bounding boxes of different formats. Please convert the two BBoxes to the same format before calculating iou()."
-
     scale = a.format.scale
     style = a.format.style
 
-    unified_format = BBoxFormat(style, scale)
+    unified_format = BBoxFormat("XYXY", scale)
 
     a = a.as_format(unified_format)
     b = b.as_format(unified_format)
