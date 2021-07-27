@@ -21,7 +21,7 @@ Instead of writing yet more utility functions to convert between bounding box fo
 
 Install with pip:
 
-https://github.com/tensorturtle/rebox/blob/cf6260950e9a85245d1f8e1e1e907f86975870ac/readme_examples.py#L1
+![](https://github.com/tensorturtle/rebox/blob/cf6260950e9a85245d1f8e1e1e907f86975870ac/readme_examples.py#L1-L15)
 
 ## Usage
 
