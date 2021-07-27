@@ -31,13 +31,16 @@ Example: converting from YOLO-style to COCO-style bounding box format.
 
 ```python3
 from rebox import BBox
+from rebox import yolo, coco
 
 image_height = 360 # pixels
 image_width = 640 # pixels
 
-yolo_bbox = BBox([0.31, 0.5, 0.2, 0.6], yolo_format) # using built-in 'yolo_format'
+yolo_bbox = BBox([0.31, 0.5, 0.2, 0.6], yolo) # using built-in 'yolo_format'
 
 coco_bbox = yolo_bbox.as_format(coco, image_width, image_height) # to convert to built-in format 'coco'
+
+print(coco_bbox.value) # array([134.4,  72. , 128. , 216. ])
 ```
 
 Common formats such as YOLO, COCO, PASCAL_VOC, Albumentations, and Label Studio are provided as a convenience. If you wish to make your own coordinates format, instantiate the BBoxFormat class.
