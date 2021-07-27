@@ -1,5 +1,5 @@
 from rebox import BBox
-from rebox.formats coco, pascal
+from rebox.formats import coco, pascal
 from rebox.ops import IOU
 
 one_bbox = BBox([40,50,20,10], coco)
