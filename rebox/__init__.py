@@ -1,6 +1,6 @@
 """Main package initialization."""
 
-from rebox.bbox import BBox2D
+from rebox.bbox import BBox
 from rebox.format import BBoxFormat
 from rebox.common_formats import yolo, coco, pascal, albumentations, label_studio
 

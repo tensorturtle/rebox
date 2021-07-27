@@ -1,4 +1,3 @@
-#from __future__ import annotations
 """2D bounding box module."""
 
 from copy import deepcopy
@@ -8,7 +7,7 @@ from .format import BBoxFormat
 from .common_formats import yolo, coco, pascal, albumentations, label_studio
 from .elements import XcYcWH_to_XYXY, XYXY_to_XcYcWH, XmYmWH_to_XYXY, XYXY_to_XmYmWH, xyxy_scaled_rel_to_abs, xyxy_abs_to_scaled_rel, xyxy_simple_rescale
 
-class BBox2D:
+class BBox:
 
     """
     Class to represent a 2D bounding box.
@@ -19,7 +18,7 @@ class BBox2D:
 
     Raises:
         ValueError: If 'box' is not of length 4
-        TypeError: If 'box' is not of type {list, tuple, numpy.ndarray, BBox2D
+        TypeError: If 'box' is not of type {list, tuple, numpy.ndarray, BBox
     """
 
     yolo = yolo
@@ -65,7 +64,7 @@ class BBox2D:
                 output = bbox.value
 
         output_format = BBoxFormat(target_format.style, target_format.scale)
-        return BBox2D(output, output_format)
+        return BBox(output, output_format)
 
     # helper for self.to_format()
     def _rescale(self, source_bbox, target_format: BBoxFormat, image_width=None, image_height=None):
@@ -76,7 +75,7 @@ class BBox2D:
         # boolean * boolean = 4 possibilities
 
         if (source_rel and target_rel):
-            scaled_bbox = BBox2D(
+            scaled_bbox = BBox(
                 xyxy_simple_rescale(
                     coords = source_bbox.value,
                     from_scale = source_bbox.format.scale,
@@ -85,7 +84,7 @@ class BBox2D:
                 )
         elif (source_rel and (not target_rel)):
             self._validate_image_size(image_width, image_height)
-            scaled_bbox = BBox2D(
+            scaled_bbox = BBox(
                 xyxy_scaled_rel_to_abs(
                     coords = source_bbox.value,
                     from_scale = source_bbox.format.scale,
@@ -95,7 +94,7 @@ class BBox2D:
             )
         elif ((not source_rel) and target_rel):
             self._validate_image_size(image_width, image_height)
-            scaled_bbox = BBox2D(
+            scaled_bbox = BBox(
                 xyxy_abs_to_scaled_rel(
                     coords = source_bbox.value,
                     to_scale = target_format.scale,
@@ -134,7 +133,7 @@ class BBox2D:
 
         xyxy_format_same_scale = BBoxFormat("XYXY", bbox.format.scale) # only style was changed. Scale was not changed.
 
-        return BBox2D(output, xyxy_format_same_scale)
+        return BBox(output, xyxy_format_same_scale)
 
     # helper for self.to_format()
     @staticmethod
@@ -147,7 +146,7 @@ class BBox2D:
     # helper for self.__init__()
     @staticmethod
     def _validate_box(x):
-        if isinstance(x, BBox2D):
+        if isinstance(x, BBox):
             x = x
 
         elif isinstance(x, (list, tuple)):
@@ -165,13 +164,13 @@ class BBox2D:
         else:
             raise TypeError(
                 "Expected input to constructor to be a 4 element "
-                "list, tuple, numpy ndarray, or BBox2D object.")
+                "list, tuple, numpy ndarray, or BBox object.")
         return x
 
 
     # basic magic methods
     def __repr__(self):
-        return f"BBox2D({self.value}, BBoxFormat({self.format.style}, {self.format.scale}))"
+        return f"BBox({self.value}, BBoxFormat({self.format.style}, {self.format.scale}))"
 
     def __str__(self):
         print(self.format.scale)
@@ -331,7 +330,7 @@ class BBox2D:
             raise AttributeError("height not available for format: f{self.format}")
 
 if __name__ == "__main__":
-    bbox = BBox2D([15,20,40,50], label_studio)
+    bbox = BBox([15,20,40,50], label_studio)
     print(bbox)
     print(bbox.format)
     print(bbox.format.style)
