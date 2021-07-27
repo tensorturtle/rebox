@@ -20,7 +20,9 @@ Use `py` to signal Python language.
 
 For example,
 > \```py
+> 
 > \# readme_example_code.py
+> 
 > \```
 
 Run `npx embedme README.md` to embed the code.
