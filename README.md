@@ -4,7 +4,7 @@
 ![codecov](https://codecov.io/gh/tensorturtle/rebox/branch/main/graph/badge.svg?token=H7HTDYNIAV)
 ![codacy](https://img.shields.io/codacy/grade/b16458c671284c5e98c65e6124ad4c79)
 
-Natively represent and fluidly convert between 2D rectangular bounding box annotation formats in Python.
+Fluidly convert between native representations of 2D rectangular bounding box annotation formats in Python.
 
 Instead of writing yet more utility functions to convert between bounding box formats, use this instead.
 
