@@ -18,11 +18,9 @@ Install with `npx install embedme`
 In README.md, create a code block with the filename of the code file to be embedded as a comment. 
 Use `py` to signal Python language.
 
-For example, (without escape backslash)
+For example,
 > \```py
-> 
 > \# readme_example_code.py
-> 
 > \```
 
 Run `npx embedme README.md` to embed the code.
