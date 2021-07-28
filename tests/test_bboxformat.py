@@ -34,28 +34,28 @@ def test_style_attribute():
     assert pascal.style == style_xyxy
 
 def test_scale_attribute():
-    assert coco.scale == None
+    assert pascal.scale == None
 
 def test_is_relative_attribute():
-    assert coco.is_relative == False
+    assert pascal.is_relative == False
 
 # Albumentations
 def test_style_attribute():
-    assert coco.style == style_xyxy
+    assert albumentations.style == style_xyxy
 
 def test_scale_attribute():
-    assert coco.scale == 1
+    assert albumentations.scale == 1
 
 def test_is_relative_attribute():
-    assert coco.is_relative == True
+    assert albumentations.is_relative == True
 
 
 # Label Studio
 def test_style_attribute():
-    assert coco.style == style_xmymwh
+    assert label_studio.style == style_xmymwh
 
 def test_scale_attribute():
-    assert coco.scale == 100
+    assert label_studio.scale == 100
 
 def test_is_relative_attribute():
-    assert coco.is_relative == True
+    assert label_studio.is_relative == True
