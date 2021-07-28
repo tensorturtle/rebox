@@ -10,3 +10,6 @@ def coco_example():
 
 def test_value(coco_example):
     assert np.array_equal(coco_example.value, np.array([10,20,30,30]))
+
+def test_x1_attribute(coco_example):
+    assert coco_example.x1 == 10

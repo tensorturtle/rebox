@@ -208,6 +208,16 @@ class BBox:
         """
         return self._value
 
+    @value.setter
+    def value(self, value):
+        """
+        Set coordinates of bounding box
+        """
+        setting_value = np.array(value)
+        if len(setting_value) != 4:
+            raise ValueError("Input value is not of length 4")
+        self._value = setting_value
+
     @property
     def x1(self):
         """
