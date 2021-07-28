@@ -43,7 +43,7 @@ jobs:
         pip install coverage
         coverage run -m pytest tests/*
     - name: Upload coverage to codecov
-    - uses: actions/checkout@master
+      uses: actions/checkout@master
     - uses: codecov/codecov-action@v2
       with:
         token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
