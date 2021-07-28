@@ -28,7 +28,6 @@ Description: # rebox
         ## Installation
         
         Install with pip:
-        
         ```bash
         pip install rebox
         ```
@@ -37,7 +36,9 @@ Description: # rebox
         
         ### Level 0: Create a `BBox` and access/modify its attributes
         
-        ```python3
+        ```py
+        # readme_examples/create_bbox.py
+        
         from rebox import BBox
         from rebox.formats import coco
         
@@ -53,13 +54,20 @@ Description: # rebox
         # set values
         coco_bbox.x1 = 60
         print(coco_bbox.x1) # 60
+        
+        
         ```
+        
+        These attributes are only implemented for the current format,
+        and are not automatically converted. For example, trying to access `x2` for a `XmYmWH` format returns `AttributeError`.
         
         ### Level 1: Converting between the same absolute/relative formats
         
         The simplest conversion keeps the same scale, but with different styles:
         
-        ```python3
+        ```py
+        # readme_examples/simple_conversion.py
+        
         from rebox import BBox
         from rebox.formats import coco, pascal
         
@@ -68,13 +76,16 @@ Description: # rebox
         
         print(pascal_bbox) # "Coordinates: [40 50 59 64], Style: XYXY, Scale: None"
         print(pascal_bbox.value) # [40 50 59 64]
+        
         ```
         
         ### Level 2: Converting across absolute/relative formats
         
         This time, pass in image height and width, to convert across pixel values and relative scale values.
         
-        ```python3
+        ```py
+        # readme_examples/absolute_relative_conversion.py
+        
         from rebox import BBox
         from rebox.formats import yolo, coco
         
@@ -86,6 +97,7 @@ Description: # rebox
         coco_bbox = yolo_bbox.as_format(coco, image_width, image_height) # to convert to built-in format 'coco'
         
         print(coco_bbox.value) # array([134.4,  72. , 128. , 216. ])
+        
         ```
         
         ### Level 3: Operations on `BBox`es
@@ -94,15 +106,18 @@ Description: # rebox
         
         #### IOU (Intersection over Union) of two bounding boxes
         
-        ```python3
+        ```py
+        # readme_examples/iou.py
+        
         from rebox import BBox
-        from rebox.formats coco, pascal
-        from rebox.ops import IOU
+        from rebox.formats import coco, pascal
+        from rebox.ops import iou
         
         one_bbox = BBox([40,50,20,10], coco)
         two_bbox = BBox([45,60, 30, 20], pascal)
         
-        iou = IOU(one_bbox, two_bbox)
+        iou = iou(one_bbox, two_bbox)
+        
         ```
         
         ### Common Bounding Box Formats
