@@ -9,7 +9,7 @@ def test_style(example_xyxy_1000_format):
     assert example_format.style == "XYXY"
 
 def test_scale(example_xyxy_1000_format):
-    assert example_format..scale == 1000
+    assert example_format.scale == 1000
 
 def test_scale(example_xyxy_1000_format):
     assert example_format.is_relative == True
@@ -22,7 +22,7 @@ def test_style(example_xmymwh_none_format):
     assert example_format.style == "XmYmWH"
 
 def test_scale(example_xyxy_1000_format):
-    assert example_format..scale == None
+    assert example_format.scale == None
 
 def test_scale(example_xyxy_1000_format):
     assert example_format.is_relative == False
