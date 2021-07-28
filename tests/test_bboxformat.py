@@ -1,6 +1,7 @@
 import pytest
 import numpy as np
 from rebox import BBoxFormat
+from rebox import BBox
 from rebox.formats import coco, yolo, pascal, albumentations, label_studio
 
 style_xyxy = "XYXY"
