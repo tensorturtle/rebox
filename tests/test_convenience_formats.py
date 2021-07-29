@@ -23,10 +23,10 @@ def test_yolo_style_attribute():
     assert yolo.style == style_xcycwh
 
 def test_yolo_scale_attribute():
-    assert coco.scale == 1
+    assert yolo.scale == 1
 
 def test_yolo_is_relative_attribute():
-    assert coco.is_relative == True
+    assert yolo.is_relative == True
 
 # PASCAL_VOC
 def test_pascal_style_attribute():
