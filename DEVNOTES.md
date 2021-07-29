@@ -1,8 +1,33 @@
 # Development Readme
 
+
 ## Package distribution: Pip 
 
 ## Continuous Integration Testing: pytest, Codecov, and Github Actions
+
+### Testing Example
+
+![](assets/albumentations_bbox_example.jpg)
+
+An example image from the COCO dataset.
+
+#### [From Albumentations documentation](https://albumentations.ai/docs/getting_started/bounding_boxes_augmentation/#albumentations)
+
+| Format | Coordinates |
+|---|---|
+| YOLO | [0.4046875, 0.840625, 0.503125, 0.24375] |
+| COCO | [98, 345, 322, 117]
+| Pascal VOC | [98, 345, 420, 462] |
+| Albumentations | [0.153125, 0.71875, 0.65625, 0.9625] |
+
+#### Extras
+
+| Format | Coordinates | 
+| --- | --- | 
+| Label Studio | [15.3125, 71.875, 65.625, 96.25] | 
+
+
+### Workflow
 
 Install pytest
 
@@ -57,3 +82,7 @@ For example,
 > \```
 
 Run `npx embedme README.md` to embed the code.
+
+### Automatically generate documentation from docstrings:
+
+Sphinx with autodoc plugin
