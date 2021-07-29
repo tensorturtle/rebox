@@ -72,7 +72,7 @@ def test_set_h_attribute(coco_example):
 
 def test_get_x2_attribute(coco_example):
     with pytest.raises(AttributeError):
-        coco_example.x2
+        _ = coco_example.x2
 
 def test_set_x2_attribute(coco_example):
     with pytest.raises(AttributeError):
@@ -80,7 +80,7 @@ def test_set_x2_attribute(coco_example):
 
 def test_get_y2_attribute(coco_example):
     with pytest.raises(AttributeError):
-        coco_example.y2
+        _ = coco_example.y2
 
 def test_set_y2_attribute(coco_example):
     with pytest.raises(AttributeError):
@@ -88,7 +88,7 @@ def test_set_y2_attribute(coco_example):
 
 def test_get_xc_attribute(coco_example):
     with pytest.raises(AttributeError):
-        coco_example.xc
+        _ = coco_example.xc
 
 def test_set_xc_attribute(coco_example):
     with pytest.raises(AttributeError):
@@ -96,7 +96,7 @@ def test_set_xc_attribute(coco_example):
 
 def test_get_yc_attribute(coco_example):
     with pytest.raises(AttributeError):
-        coco_example.yc
+        _ = coco_example.yc
 
 def test_set_yc_attribute(coco_example):
     with pytest.raises(AttributeError):
