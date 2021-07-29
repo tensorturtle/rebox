@@ -1,3 +1,4 @@
+import numpy as np
 import pytest
 from rebox.elements import XcYcWH_to_XYXY, XYXY_to_XcYcWH, XmYmWH_to_XYXY, XYXY_to_XmYmWH, normalize, denormalize, xyxy_scaled_rel_to_abs, xyxy_abs_to_scaled_rel, xyxy_simple_rescale
 
