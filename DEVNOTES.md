@@ -34,10 +34,8 @@ View coverage report
 coverage report
 ```
 
-
-
-
-https://about.codecov.io/blog/python-code-coverage-using-github-actions-and-codecov/
+**Resources**:
+[Codecov Github Actions](https://about.codecov.io/blog/python-code-coverage-using-github-actions-and-codecov/)
 
 ## Documentation
 
