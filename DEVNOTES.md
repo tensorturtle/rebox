@@ -27,7 +27,7 @@ An example image from the COCO dataset.
 | Label Studio | [15.3125, 71.875, 65.625, 96.25] | 
 
 
-### Workflow
+### Testing Workflow
 
 Install pytest
 
