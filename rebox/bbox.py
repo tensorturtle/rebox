@@ -40,22 +40,14 @@ class BBox:
         Convert the format of 'bbox' of style 'XYXY'
         to 'target_format', without changing scale.
         """
-        if bbox.format.is_relative:
-            if target_format.style == "XmYmWH":
-                output = XYXY_to_XmYmWH(bbox.value)
-            elif target_format.style == "XcYcWH":
-                output = XYXY_to_XcYcWH(bbox.value)
-            elif target_format.style == "XYXY":
-                output = bbox.value
-            else:
-                raise ValueError("Invalid format style given. Check format of bounding box.")
-        else: # absolute format; account for fencepost error
-            if target_format.style == "XmYmWH":
-                output = XYXY_to_XmYmWH(bbox.value, pixel=True)
-            elif target_format.style == "XcYcWH":
-                output = XYXY_to_XcYcWH(bbox.value, pixel=True)
-            elif target_format.style == "XYXY":
-                output = bbox.value
+        if target_format.style == "XmYmWH":
+            output = XYXY_to_XmYmWH(bbox.value)
+        elif target_format.style == "XcYcWH":
+            output = XYXY_to_XcYcWH(bbox.value)
+        elif target_format.style == "XYXY":
+            output = bbox.value
+        else:
+            raise AttributeError("target format is invalid")
 
         output_format = BBoxFormat(target_format.style, target_format.scale)
         return BBox(output, output_format)
@@ -108,22 +100,14 @@ class BBox:
         Convert 'bbox' style to 'XYXY'.
         Keep scale unchanged.
         """
-        if bbox.format.is_relative:
-            if bbox.format.style == "XmYmWH":
-                output = XmYmWH_to_XYXY(bbox.value)
-            elif bbox.format.style == "XcYcWH":
-                output = XcYcWH_to_XYXY(bbox.value)
-            elif bbox.format.style == "XYXY":
-                output = bbox.value
-            else:
-                raise ValueError("Invalid format style given. Check format of bounding box.")
-        else: # absolute format (counting in whole pixels); account for fencepost error
-            if bbox.format.style == "XmYmWH":
-                output = XmYmWH_to_XYXY(bbox.value, pixel=True)
-            elif bbox.format.style == "XcYcWH":
-                output = XcYcWH_to_XYXY(bbox.value, pixel=True)
-            elif bbox.format.style == "XYXY":
-                output = bbox.value
+        if bbox.format.style == "XmYmWH":
+            output = XmYmWH_to_XYXY(bbox.value)
+        elif bbox.format.style == "XcYcWH":
+            output = XcYcWH_to_XYXY(bbox.value)
+        elif bbox.format.style == "XYXY":
+            output = bbox.value
+        else:
+            raise ValueError("Invalid format style given. Check format of bounding box.")
 
         xyxy_format_same_scale = BBoxFormat("XYXY", bbox.format.scale) # only style was changed. Scale was not changed.
 

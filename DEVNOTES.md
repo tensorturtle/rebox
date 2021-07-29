@@ -4,6 +4,39 @@
 
 ## Continuous Integration Testing: pytest, Codecov, and Github Actions
 
+Install pytest
+
+```bash
+pip install pytest
+```
+
+Install coverage
+
+```bash
+pip install coverage
+```
+
+Write tests in a 'tests' directory, then run them with:
+
+```bash
+pytest tests/\*
+```
+
+Run coverage with pytest to get coverage report:
+
+```bash
+coverage run -m pytest tests/\*
+```
+
+View coverage report
+
+```bash
+coverage report
+```
+
+
+
+
 https://about.codecov.io/blog/python-code-coverage-using-github-actions-and-codecov/
 
 ## Documentation

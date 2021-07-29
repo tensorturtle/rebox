@@ -1,4 +1,4 @@
-def XcYcWH_to_XYXY(coords, pixel=False):
+def XcYcWH_to_XYXY(coords):
     '''
     [x_center, y_center, width, height]
     to
@@ -9,11 +9,6 @@ def XcYcWH_to_XYXY(coords, pixel=False):
     width = coords[2]
     height = coords[3]
 
-    if pixel:
-        # accounting for fencepost error; pixel bounding box width/height is taken to be the 'outside' measure
-        width -= 1
-        height -= 1
-
     x_min = x_center - (width/2)
     y_min = y_center - (height/2)
     x_max = x_center + (width/2)
@@ -22,7 +17,7 @@ def XcYcWH_to_XYXY(coords, pixel=False):
     return [x_min, y_min, x_max, y_max]
 
 
-def XYXY_to_XcYcWH(coords, pixel=False):
+def XYXY_to_XcYcWH(coords):
     '''
     [x_min, y_min, x_max, y_max]
     to
@@ -38,13 +33,9 @@ def XYXY_to_XcYcWH(coords, pixel=False):
     width = x_max - x_min
     height = y_max - y_min
 
-    if pixel:
-        width += 1
-        height += 1
-
     return [x_center, y_center, width, height]
 
-def XmYmWH_to_XYXY(coords, pixel=False):
+def XmYmWH_to_XYXY(coords):
     x_min = coords[0]
     y_min = coords[1]
     width = coords[2]
@@ -53,14 +44,9 @@ def XmYmWH_to_XYXY(coords, pixel=False):
     x_max = x_min + width
     y_max = y_min + height
 
-    if pixel:
-        # accounting for fencepost error; pixel bounding box width/height is taken to be the 'outside' measure
-        x_max -= 1
-        y_max -= 1
-
     return [x_min, y_min, x_max, y_max]
 
-def XYXY_to_XmYmWH(coords, pixel=False):
+def XYXY_to_XmYmWH(coords):
     x_min = coords[0]
     y_min = coords[1]
     x_max = coords[2]
@@ -68,10 +54,6 @@ def XYXY_to_XmYmWH(coords, pixel=False):
 
     width = x_max - x_min
     height = y_max - y_min
-
-    if pixel:
-        width += 1
-        height += 1
 
     return [x_min, y_min, width, height]
 
