@@ -19,13 +19,13 @@ pip install coverage
 Write tests in a 'tests' directory, then run them with:
 
 ```bash
-pytest tests/\*
+pytest tests/*
 ```
 
 Run coverage with pytest to get coverage report:
 
 ```bash
-coverage run -m pytest tests/\*
+coverage run -m pytest tests/*
 ```
 
 View coverage report
