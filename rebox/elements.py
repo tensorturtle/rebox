@@ -1,3 +1,5 @@
+import numpy as np
+
 def XcYcWH_to_XYXY(coords):
     '''
     [x_center, y_center, width, height]
@@ -14,8 +16,7 @@ def XcYcWH_to_XYXY(coords):
     x_max = x_center + (width/2)
     y_max = y_center + (height/2)
 
-    return np.array([x_min, y_min, x_max, y_max])
-
+    return np.around(np.array([x_min, y_min, x_max, y_max]), decimals=4)
 
 def XYXY_to_XcYcWH(coords):
     '''
@@ -33,7 +34,7 @@ def XYXY_to_XcYcWH(coords):
     width = x_max - x_min
     height = y_max - y_min
 
-    return np.array([x_center, y_center, width, height])
+    return np.around(np.array([x_center, y_center, width, height]), decimals=4)
 
 def XmYmWH_to_XYXY(coords):
     x_min = coords[0]
@@ -44,7 +45,7 @@ def XmYmWH_to_XYXY(coords):
     x_max = x_min + width
     y_max = y_min + height
 
-    return np.array([x_min, y_min, x_max, y_max])
+    return np.around(np.array([x_min, y_min, x_max, y_max]), decimals=4)
 
 def XYXY_to_XmYmWH(coords):
     x_min = coords[0]
@@ -55,21 +56,21 @@ def XYXY_to_XmYmWH(coords):
     width = x_max - x_min
     height = y_max - y_min
 
-    return np.array([x_min, y_min, width, height])
+    return np.around(np.array([x_min, y_min, width, height]), decimals=4)
 
 def normalize(coords, width, height):
     '''
     Normalize pixel values to [0,1]
     Assuming [x,y,x,y] values
     '''
-    return np.array([coords[0]/width, coords[1]/height, coords[2]/width, coords[3]/height])
+    return np.around(np.array([coords[0]/width, coords[1]/height, coords[2]/width, coords[3]/height]), decimals=4)
 
 def denormalize(coords, width, height):
     '''
     Expand normalized values to full pixel range
     Assuming [x,y,x,y] values
     '''
-    return np.array([coords[0]*width, coords[1]*height, coords[2]*width, coords[3]*height])
+    return np.around(np.array([coords[0]*width, coords[1]*height, coords[2]*width, coords[3]*height]), decimals=4)
 
 def xyxy_scaled_rel_to_abs(coords, from_scale, width, height):
     x_min = coords[0]
@@ -82,7 +83,7 @@ def xyxy_scaled_rel_to_abs(coords, from_scale, width, height):
     abs_x_max = x_max / from_scale * width
     abs_y_max = y_max / from_scale * height
 
-    return np.array([abs_x_min, abs_y_min, abs_x_max, abs_y_max])
+    return np.around(np.array([abs_x_min, abs_y_min, abs_x_max, abs_y_max]), decimals=4)
 
 def xyxy_abs_to_scaled_rel(coords, to_scale, width, height):
     abs_x_min = coords[0]
@@ -103,4 +104,4 @@ def xyxy_abs_to_scaled_rel(coords, to_scale, width, height):
     return np.array([x_min, y_min, x_max, y_max])
 
 def xyxy_simple_rescale(coords, from_scale, to_scale):
-    return np.array(coords / from_scale * to_scale)
+    return np.around(np.array(coords / from_scale * to_scale), decimals=4)
