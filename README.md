@@ -4,9 +4,9 @@
 [![codecov](https://codecov.io/gh/tensorturtle/rebox/branch/main/graph/badge.svg?token=H7HTDYNIAV)](https://codecov.io/gh/tensorturtle/rebox) 
 [![codacy](https://img.shields.io/codacy/grade/b16458c671284c5e98c65e6124ad4c79)](https://app.codacy.com/gh/tensorturtle/rebox/dashboard)
 
-Fluidly convert between native representations of 2D rectangular bounding box annotation formats in Python.
+Fluidly convert between 2D rectangular bounding box annotation formats.
 
-Instead of writing yet more utility functions to convert between bounding box formats, use this instead.
+Instead of writing yet more utility functions to convert between bounding box formats and perform common operations using them, use this instead.
 
 > **Like [varunagrawal/bbox](https://github.com/varunagrawal/bbox), but**
 > +   ⚠️ only support 2D bounding boxes
