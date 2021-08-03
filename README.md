@@ -1,4 +1,4 @@
-# rebox: Easily convert between common bounding box formats
+# rebox: Easily convert between bounding box formats
 
 [![Build](https://github.com/tensorturtle/rebox/actions/workflows/build.yml/badge.svg)](https://github.com/tensorturtle/rebox/actions)
 [![codecov](https://codecov.io/gh/tensorturtle/rebox/branch/main/graph/badge.svg?token=H7HTDYNIAV)](https://codecov.io/gh/tensorturtle/rebox) 
