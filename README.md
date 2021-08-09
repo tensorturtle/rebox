@@ -116,3 +116,15 @@ Common formats such as YOLO, COCO, PASCAL_VOC, Albumentations, and Label Studio 
 |   **PASCAL_VOC**   	| Pixels                         	|     `[ x_min, y_min, x_MAX, y_MAX ]`    	|
 | **Albumentations** 	|         Normalized (0,1)         	|     `[x_min, y_min, x_MAX, y_MAX ]`    	|
 | **Label Studio**    | Normalized percentage (0, 100)    |     `[x_min, y_min, width, height]`     |
+
+## Development 
+
+I organized often-used commands into scripts.
+
+`bump_0.1_patch.sh` increments the 'patch' version (last place)
+
+`pypi_build.sh` creates a new distro wheel
+
+`pypi_upload.sh` uses twine to upload to pypi
+
+`testpypi_upload.sh` is for uploading to test pypi
