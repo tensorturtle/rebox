@@ -1,1 +1,1 @@
-bumpversion --current-version 0.1.0 micro setup.py rebox/__init__.py
+bumpversion --current-version 0.1.0 patch setup.py rebox/__init__.py
