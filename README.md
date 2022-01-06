@@ -17,7 +17,7 @@ Instead of writing yet more utility functions to convert between bounding box fo
 >> coco_bbox = BBox([40,50,20,15], coco)
 >> pascal_bbox = coco_bbox.as_format(pascal)
 
->> pascal_bbox)
+>> pascal_bbox
 "Coordinates: [40 50 59 64], Style: XYXY, Scale: None"
 >> pascal_bbox.value
 [40 50 59 64]
