@@ -46,13 +46,6 @@ Common formats such as YOLO, COCO, PASCAL_VOC, Albumentations, and Label Studio 
 
 Inspired by [varunagrawal/bbox](https://github.com/varunagrawal/bbox). `bbox` is not flexible enough to accomodate the various format schemes.
 
-## Installation
-
-Install with pip:
-```bash
-pip install rebox
-```
-
 ## Usage
 
 ### Creating a `BBox` and access/modifing its attributes
