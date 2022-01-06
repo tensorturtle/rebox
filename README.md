@@ -8,7 +8,39 @@ Fluidly convert between 2D rectangular bounding box annotation formats.
 
 Instead of writing yet more utility functions to convert between bounding box formats and perform common operations using them, use this instead.
 
-Inspired by [varunagrawal/bbox](https://github.com/varunagrawal/bbox)
+## Quickstart
+
+```py
+>> from rebox import BBox
+>> from rebox.formats import coco, pascal
+
+>> coco_bbox = BBox([40,50,20,15], coco)
+>> pascal_bbox = coco_bbox.as_format(pascal)
+
+>> pascal_bbox)
+"Coordinates: [40 50 59 64], Style: XYXY, Scale: None"
+>> pascal_bbox.value
+[40 50 59 64]
+```
+
+```py
+pascal_bbox
+```
+
+
+## Supported Bounding Box Formats
+
+Common formats such as YOLO, COCO, PASCAL_VOC, Albumentations, and Label Studio are provided as a convenience. If you wish to make your own coordinates format, instantiate the BBoxFormat class.
+
+|                	|               Scale              	|           Style          	|
+|--------------:	|:--------------------------------:	|:-------------------------------------:	|
+|      **YOLO**      	|         Normalized (0,1)        	| `[ x_Center, y_Center, width, height ]` 	|
+|      **COCO**      	| Pixels                         	|    `[ x_min, y_min, width, height ]`    	|
+|   **PASCAL_VOC**   	| Pixels                         	|     `[ x_min, y_min, x_MAX, y_MAX ]`    	|
+| **Albumentations** 	|         Normalized (0,1)         	|     `[x_min, y_min, x_MAX, y_MAX ]`    	|
+| **Label Studio**    | Normalized percentage (0, 100)    |     `[x_min, y_min, width, height]`     |
+
+Inspired by [varunagrawal/bbox](https://github.com/varunagrawal/bbox). `bbox` is not flexible enough to accomodate the various format schemes.
 
 ## Installation
 
@@ -104,18 +136,6 @@ two_bbox = BBox([45,60, 30, 20], pascal)
 iou = iou(one_bbox, two_bbox)
 
 ```
-
-### Common Bounding Box Formats
-
-Common formats such as YOLO, COCO, PASCAL_VOC, Albumentations, and Label Studio are provided as a convenience. If you wish to make your own coordinates format, instantiate the BBoxFormat class.
-
-|                	|               Scale              	|           Style          	|
-|--------------:	|:--------------------------------:	|:-------------------------------------:	|
-|      **YOLO**      	|         Normalized (0,1)        	| `[ x_Center, y_Center, width, height ]` 	|
-|      **COCO**      	| Pixels                         	|    `[ x_min, y_min, width, height ]`    	|
-|   **PASCAL_VOC**   	| Pixels                         	|     `[ x_min, y_min, x_MAX, y_MAX ]`    	|
-| **Albumentations** 	|         Normalized (0,1)         	|     `[x_min, y_min, x_MAX, y_MAX ]`    	|
-| **Label Studio**    | Normalized percentage (0, 100)    |     `[x_min, y_min, width, height]`     |
 
 ## Development 
 
