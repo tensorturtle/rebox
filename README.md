@@ -19,14 +19,10 @@ Instead of writing yet more utility functions to convert between bounding box fo
 
 >> pascal_bbox
 "Coordinates: [40 50 59 64], Style: XYXY, Scale: None"
+
 >> pascal_bbox.value
 [40 50 59 64]
 ```
-
-```py
-pascal_bbox
-```
-
 
 ## Supported Bounding Box Formats
 
@@ -136,6 +132,8 @@ two_bbox = BBox([45,60, 30, 20], pascal)
 iou = iou(one_bbox, two_bbox)
 
 ```
+
+If you would like to see more operations, please submit an Issue.
 
 ## Development 
 
