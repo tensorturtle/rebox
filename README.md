@@ -10,6 +10,13 @@ Instead of writing yet more utility functions to convert between bounding box fo
 
 ## Quickstart
 
+
+**Install with pip:**
+```bash
+pip install rebox
+```
+
+**Convert a boundig box from COCO format to VOC_PASCAL format**:
 ```py
 >> from rebox import BBox
 >> from rebox.formats import coco, pascal
@@ -47,7 +54,7 @@ pip install rebox
 
 ## Usage
 
-### Level 0: Create a `BBox` and access/modify its attributes
+### Creating a `BBox` and access/modifing its attributes
 
 ```py
 # readme_examples/create_bbox.py
@@ -74,7 +81,7 @@ print(coco_bbox.x1) # 60
 These attributes are only implemented for the current format,
 and are not automatically converted. For example, trying to access `x2` for a `XmYmWH` format returns `AttributeError`.
 
-### Level 1: Converting between the same absolute/relative formats
+### Converting between the same absolute/relative formats
 
 The simplest conversion keeps the same scale, but with different styles:
 
@@ -92,7 +99,7 @@ print(pascal_bbox.value) # [40 50 59 64]
 
 ```
 
-### Level 2: Converting across absolute/relative formats
+### Converting across absolute/relative formats
 
 This time, pass in image height and width, to convert across pixel values and relative scale values.
 
@@ -113,7 +120,7 @@ print(coco_bbox.value) # array([134.4,  72. , 128. , 216. ])
 
 ```
 
-### Level 3: Operations on `BBox`es
+### Operations on `BBox`es
 
 `rebox` includes several common utility operations on bounding boxes.
 
