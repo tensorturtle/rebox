@@ -8,8 +8,9 @@ Fluidly convert between 2D rectangular bounding box annotation formats.
 
 Instead of writing yet more utility functions to convert between bounding box formats and perform common operations using them, use this instead.
 
-## Quickstart
+There's nothing magical about this repo, it really is just meant to replace boilerplate code.
 
+## Quickstart
 
 **Install with pip:**
 ```bash
