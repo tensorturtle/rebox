@@ -8,7 +8,7 @@ Fluidly convert between 2D rectangular bounding box annotation formats.
 
 Instead of writing yet more utility functions to convert between bounding box formats and perform common operations using them, use this instead.
 
-There's nothing magical about this repo, it really is just meant to replace boilerplate code.
+There's nothing magical about this package, it really is just meant to replace boilerplate code.
 
 ## Quickstart
 
