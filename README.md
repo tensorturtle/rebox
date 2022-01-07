@@ -17,7 +17,7 @@ There's nothing magical about this package, it really is just meant to replace b
 pip install rebox
 ```
 
-**Convert a boundig box from COCO format to VOC_PASCAL format**:
+**Convert a bounding box from COCO format to VOC_PASCAL format**:
 ```py
 >> from rebox import BBox
 >> from rebox.formats import coco, pascal
